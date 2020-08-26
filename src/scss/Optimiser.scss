@@ -1,0 +1,43 @@
+$darkColorBg: #1a936f;
+$lightColorBg: lighten($darkColorBg, 15%);
+$whiteColorText: #ffffff;
+@mixin globalFont {
+  font-family: 'Baloo Tamma 2', cursive;
+}
+.optimiser{
+  display: flex;
+  @include globalFont();
+  height: 100vh;
+  width: 100%;
+  flex-direction: row;
+  background-color: $lightColorBg;
+}
+
+.list{
+  width: 40%;
+  box-sizing: border-box;
+  border-right: 2px solid $darkColorBg;
+}
+.list__button{
+  @include globalFont();
+  position: relative;
+  height: 50px;
+  margin: 16px 0;
+  padding: 0 16px;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  background-color: $darkColorBg;
+  transition: all .1s linear;
+  &:hover{
+    transform: scale(1.1);
+  }
+  &:active{
+    transform: translateY(5px) scale(1.1);
+  }
+}
+.content{
+  width: 60%;
+}

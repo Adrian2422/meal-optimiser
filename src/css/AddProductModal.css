@@ -1,0 +1,82 @@
+.modal--hidden {
+  display: none;
+}
+
+.modal--shown {
+  display: flex;
+  flex-flow: column nowrap;
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  backdrop-filter: brightness(50%);
+}
+
+.container {
+  display: inherit;
+  flex-flow: column nowrap;
+  position: absolute;
+  border-radius: 16px;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  z-index: 99;
+  width: 80%;
+  height: 50%;
+  background-color: #25d4a0;
+  animation: slide-up 0.5s ease-in-out;
+}
+@keyframes slide-up {
+  0% {
+    transform: translateY(200%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.productPick {
+  padding: 16px;
+}
+.productPick__select--1 {
+  font-family: "Baloo Tamma 2", cursive;
+  border: 1px solid #1a936f;
+  background-color: #cff7eb;
+  outline: none;
+}
+
+.buttonBox {
+  display: flex;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 16px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  justify-content: flex-end;
+}
+
+.button--ok,
+.button--cancel {
+  font-family: "Baloo Tamma 2", cursive;
+  height: 50px;
+  margin: 8px;
+  padding: 0 16px;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  background-color: #1a936f;
+  transition: all 0.1s linear;
+}
+.button--ok:hover,
+.button--cancel:hover {
+  transform: scale(1.1);
+}
+
+/*# sourceMappingURL=AddProductModal.css.map */

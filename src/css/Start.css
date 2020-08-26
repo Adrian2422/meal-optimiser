@@ -1,0 +1,54 @@
+.start {
+  display: flex;
+  font-family: "Baloo Tamma 2", cursive;
+  height: 100vh;
+  width: 100%;
+  flex-direction: column;
+}
+
+.start__title {
+  padding: 16px;
+  background-color: #1a936f;
+  cursor: default;
+}
+.start__title h1 {
+  margin: 0;
+  font-size: 3em;
+}
+
+.columns {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.columns__left,
+.columns__right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  width: 50%;
+  height: 100%;
+  background-color: #25d4a0;
+  transition: all 0.2s ease-in-out;
+}
+.columns__left p,
+.columns__right p {
+  margin: 0;
+  font-size: 3em;
+}
+.columns__left:hover,
+.columns__right:hover {
+  background-color: #22be90;
+  font-size: 1.3em;
+}
+@media screen and (device-width: 360px) and (device-height: 640px) and (-webkit-device-pixel-ratio: 4) {
+  .columns__left,
+.columns__right {
+    font-size: 1.5em;
+  }
+}
+
+/*# sourceMappingURL=Start.css.map */
