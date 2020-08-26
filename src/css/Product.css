@@ -38,4 +38,42 @@
   width: 60%;
 }
 
-/*# sourceMappingURL=Optimiser.css.map */
+.product {
+  display: flex;
+  margin: 8px;
+  background-size: 200%;
+  border-radius: 8px;
+  background-image: linear-gradient(to right, #1a936f 50%, #fc2e2e 50%);
+}
+.product--deleted {
+  transition: all 0.9s linear;
+  background-position-x: 100%;
+}
+
+.product__container {
+  width: 80%;
+}
+
+.product__title {
+  font-size: 1.2em;
+  margin: 0;
+}
+
+.product__mass {
+  margin: 0;
+}
+
+.product__deleteBtn {
+  border: none;
+  cursor: pointer;
+  outline: none;
+  width: 20%;
+  border-radius: 0 8px 8px 0;
+  background-color: #fc2e2e;
+}
+.product__deleteBtn:after {
+  content: "X";
+  color: white;
+}
+
+/*# sourceMappingURL=product.css.map */

@@ -1,9 +1,4 @@
-$darkColorBg: #1a936f;
-$lightColorBg: lighten($darkColorBg, 15%);
-$whiteColorText: #ffffff;
-@mixin globalFont {
-  font-family: 'Baloo Tamma 2', cursive;
-}
+@use './Optimiser.scss';
 .modal--hidden{
   display: none;
 }
@@ -31,7 +26,7 @@ $whiteColorText: #ffffff;
   z-index: 99;
   width: 80%;
   height: 50%;
-  background-color: $lightColorBg;
+  background-color: Optimiser.$lightColorBg;
   animation: slide-up .5s ease-in-out;
   @keyframes slide-up {
     0%{
@@ -40,15 +35,6 @@ $whiteColorText: #ffffff;
     100%{
       transform: translateY(0);
     }
-  }
-}
-.productPick{
-  padding: 16px;
-  &__select--1{
-    @include globalFont();
-    border: 1px solid $darkColorBg;
-    background-color: lighten($lightColorBg, 40%);
-    outline: none;
   }
 }
 .buttonBox{
@@ -63,16 +49,14 @@ $whiteColorText: #ffffff;
 }
 .button--ok,
 .button--cancel{
-  @include globalFont();
+  @include Optimiser.globalFont;
+  @include Optimiser.buttonStyle;
   height: 50px;
   margin: 8px;
   padding: 0 16px;
-  border: none;
   border-radius: 8px;
-  outline: none;
-  border: none;
   cursor: pointer;
-  background-color: $darkColorBg;
+  background-color: Optimiser.$darkColorBg;
   transition: all .1s linear;
   &:hover{
     transform: scale(1.1);

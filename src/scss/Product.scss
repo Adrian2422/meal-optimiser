@@ -1,0 +1,32 @@
+@use './Optimiser.scss';
+.product{
+  display: flex;
+  margin: 8px;
+  background-size: 200%;
+  border-radius: 8px;
+  background-image: linear-gradient(to right, Optimiser.$darkColorBg 50%, rgb(252, 46, 46) 50%);
+  &--deleted{
+    transition: all .9s linear;
+    background-position-x: 100%;
+  }
+}
+.product__container{
+  width: 80%;
+}
+.product__title{
+  font-size: 1.2em;
+  margin: 0;
+}
+.product__mass{
+  margin: 0;
+}
+.product__deleteBtn{
+  @include Optimiser.buttonStyle;
+  width: 20%;
+  border-radius: 0 8px 8px 0;
+  background-color: rgb(252, 46, 46);
+  &:after{
+    content: 'X';
+    color: white;
+  }
+}

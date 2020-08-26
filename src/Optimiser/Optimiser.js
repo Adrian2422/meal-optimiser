@@ -1,5 +1,6 @@
 import React from 'react';
-import Modal from './AddProductModal/AddProduckModal';
+import Modal from './ProductModal/ProductModal';
+import ProductsList from './ProductsList';
 import '../css/Optimiser.css';
 
 function Optimiser() {
@@ -16,6 +17,7 @@ function Optimiser() {
         className='list__button'>
           Add product
         </button>
+        <ProductsList />
       </div>
       <div className='content'></div>
       <Modal />

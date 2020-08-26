@@ -1,0 +1,10 @@
+@use './Optimiser.scss';
+.productPick{
+  padding: 16px;
+  &__select--1{
+    @include Optimiser.globalFont();
+    border: 1px solid Optimiser.$darkColorBg;
+    background-color: lighten(Optimiser.$lightColorBg, 40%);
+    outline: none;
+  }
+}

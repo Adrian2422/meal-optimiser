@@ -38,4 +38,14 @@
   width: 60%;
 }
 
-/*# sourceMappingURL=Optimiser.css.map */
+.productPick {
+  padding: 16px;
+}
+.productPick__select--1 {
+  font-family: "Baloo Tamma 2", cursive;
+  border: 1px solid #1a936f;
+  background-color: #cff7eb;
+  outline: none;
+}
+
+/*# sourceMappingURL=select.css.map */
