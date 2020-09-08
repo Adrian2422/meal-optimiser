@@ -26,26 +26,7 @@ $lightColorBg: lighten($darkColorBg, 15%);
   width: 40%;
   min-width: 200px;
   box-sizing: border-box;
-  border-right: 2px solid $darkColorBg;
-}
-.list__button{
-  @include globalFont();
-  @include buttonStyle();
-  position: relative;
-  height: 50px;
-  margin: 16px 0;
-  padding: 0 16px;
-  border-radius: 8px;
-  cursor: pointer;
-  background-color: $lightColorBg;
-  color: white;
-  transition: all .1s linear;
-  &:hover{
-    transform: scale(1.1);
-  }
-  &:active{
-    transform: translateY(5px) scale(1.1);
-  }
+  border-top: 2px solid $lightColorBg;
 }
 .content{
   width: 60%;

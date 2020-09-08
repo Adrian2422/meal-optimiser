@@ -6,9 +6,14 @@ class TopBar extends Component {
     return (
       <div className={styles.TopBar}>
         <button className={styles.TopBar__backBtn}></button>
-        
+        <button
+          className={styles.TopBar__addButton}
+          onClick={this.props.addBtnHandle}
+        >
+          Add product
+        </button>
       </div>
-    )
+    );
   }
 }
 

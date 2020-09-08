@@ -1,18 +1,42 @@
 @use './Optimiser.module.scss';
 
-.TopBar{
+.TopBar {
   display: flex;
+  align-items: center;
   height: 75px;
   background-color: Optimiser.$darkColorBg;
   color: white;
-  &__backBtn{
+  &__backBtn {
     @include Optimiser.buttonStyle;
+    height: 50px;
     width: 50px;
+    border-radius: 8px;
+    margin: 0 16px;
     background-color: Optimiser.$lightColorBg;
-    &:after{
+    transition: all 0.1s linear;
+    &:after {
       color: white;
-      content: '<';
+      content: "<";
+    }
+    &:hover,
+    &:active {
+      transform: scale(1.1);
     }
   }
-
+  &__addButton {
+    @include Optimiser.globalFont();
+    @include Optimiser.buttonStyle();
+    position: relative;
+    height: 50px;
+    margin: 0 16px;
+    padding: 0 16px;
+    border-radius: 8px;
+    background-color: Optimiser.$lightColorBg;
+    color: white;
+    transition: all 0.1s linear;
+    &:hover,
+    &:active {
+      transform: scale(1.1);
+    }
+  }
 }

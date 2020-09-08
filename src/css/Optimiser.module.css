@@ -17,29 +17,7 @@
   width: 40%;
   min-width: 200px;
   box-sizing: border-box;
-  border-right: 2px solid #2A2B5F;
-}
-
-.list__button {
-  font-family: "Baloo Tamma 2", cursive;
-  border: none;
-  cursor: pointer;
-  outline: none;
-  position: relative;
-  height: 50px;
-  margin: 16px 0;
-  padding: 0 16px;
-  border-radius: 8px;
-  cursor: pointer;
-  background-color: #414394;
-  color: white;
-  transition: all 0.1s linear;
-}
-.list__button:hover {
-  transform: scale(1.1);
-}
-.list__button:active {
-  transform: translateY(5px) scale(1.1);
+  border-top: 2px solid #414394;
 }
 
 .content {

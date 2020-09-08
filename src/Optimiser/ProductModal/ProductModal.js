@@ -3,12 +3,12 @@ import styles from "../../css/ProductModal.module.css";
 
 class Modal extends Component {
   state = {
-    query: ''
-  }
+    query: "",
+  };
 
-  passInput = e => {
+  passInput = (e) => {
     this.props.okClickHandle(this.state.query);
-  }
+  };
   render() {
     return (
       <div
@@ -26,12 +26,12 @@ class Modal extends Component {
               name="recipe"
               rows="8"
               cols="40"
-              onChange={e => this.setState({query: e.target.value})}
+              onChange={(e) => this.setState({ query: e.target.value })}
             ></textarea>
           </div>
           <div className={styles.buttonBox}>
             <input
-              type='submit'
+              type="submit"
               value="OK"
               onClick={this.passInput}
               className={styles["button--ok"]}

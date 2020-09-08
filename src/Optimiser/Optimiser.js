@@ -83,17 +83,9 @@ class Optimiser extends Component {
   render() {
     return (
       <div className={styles.optimiser}>
-        <TopBar>
-
-        </TopBar>
+        <TopBar addBtnHandle={this.listButtonHandler.bind(this)} />
         <div className={styles.wrapper}>
           <div className={styles.list}>
-            <button
-              onClick={this.listButtonHandler}
-              className={styles.list__button}
-            >
-              Add product
-            </button>
             <ProductsList productList={this.state.products} />
           </div>
           <div className={styles.content}></div>
