@@ -8,7 +8,7 @@
 
 .start__title {
   padding: 16px;
-  background-color: #1a936f;
+  background-color: #2A2B5F;
   cursor: default;
 }
 .start__title h1 {
@@ -31,7 +31,7 @@
   cursor: pointer;
   width: 50%;
   height: 100%;
-  background-color: #25d4a0;
+  background-color: #414394;
   transition: all 0.2s ease-in-out;
 }
 .columns__left p,
@@ -41,7 +41,7 @@
 }
 .columns__left:hover,
 .columns__right:hover {
-  background-color: #22be90;
+  background-color: #3a3b82;
   font-size: 1.3em;
 }
 @media screen and (device-width: 360px) and (device-height: 640px) and (-webkit-device-pixel-ratio: 4) {
@@ -51,4 +51,4 @@
   }
 }
 
-/*# sourceMappingURL=Start.css.map */
+/*# sourceMappingURL=Start.module.css.map */

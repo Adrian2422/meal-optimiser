@@ -1,20 +1,16 @@
 import React from 'react';
-import '../css/ProductsList.css';
+import styles from '../css/ProductsList.module.css';
 import Product from './Product';
 
-const ProductsList = () => {
+const ProductsList = (props) => {
+  const generateProducts = props.productList.map((product) => 
+    <Product title={product.name} mass={product.weight + 'g'} thumb={product.thumb}></Product>
+  );
+
   return (
-    <div className='productList'>
-      <Product title='Tomato' mass='500g'/>
-      <Product title='Apple' mass='200g'/>
-      <Product title='Tomato' mass='300g'/>
-      <Product title='Pineaple' mass='100g'/>
-      <Product title='Onion' mass='500g'/>
-      <Product title='Tomato' mass='400g'/>
-      <Product title='Water' mass='200g'/>
-      <Product title='Tomato' mass='300g'/>
-      <Product title='Tomato' mass='100g'/>
-      <Product title='Tomato' mass='600g'/>
+    <div className={styles.productList}>
+      {generateProducts}
+      <Product title='onion' mass='500g'></Product>
     </div>
   );
 }

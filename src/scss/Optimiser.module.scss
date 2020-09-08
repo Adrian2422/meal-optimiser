@@ -1,4 +1,4 @@
-$darkColorBg: #1a936f;
+$darkColorBg: #2A2B5F;
 $lightColorBg: lighten($darkColorBg, 15%);
 @mixin buttonStyle {
   border: none;
@@ -11,13 +11,20 @@ $lightColorBg: lighten($darkColorBg, 15%);
 .optimiser{
   @include globalFont();
   display: flex;
+  flex-direction: column;
   height: 100vh;
   width: 100%;
+  
+}
+.wrapper{
+  display: flex;
   flex-direction: row;
-  background-color: $lightColorBg;
+  height: 100vh;
+  width: 100%;
 }
 .list{
   width: 40%;
+  min-width: 200px;
   box-sizing: border-box;
   border-right: 2px solid $darkColorBg;
 }
@@ -30,7 +37,8 @@ $lightColorBg: lighten($darkColorBg, 15%);
   padding: 0 16px;
   border-radius: 8px;
   cursor: pointer;
-  background-color: $darkColorBg;
+  background-color: $lightColorBg;
+  color: white;
   transition: all .1s linear;
   &:hover{
     transform: scale(1.1);
@@ -41,4 +49,5 @@ $lightColorBg: lighten($darkColorBg, 15%);
 }
 .content{
   width: 60%;
+  background-color: $lightColorBg;
 }

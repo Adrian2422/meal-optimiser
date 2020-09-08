@@ -1,38 +1,52 @@
-import React from 'react';
-import '../../css/ProductModal.css';
-import Select from './Select';
+import React, { Component } from "react";
+import styles from "../../css/ProductModal.module.css";
 
-const Modal = () => {
+class Modal extends Component {
+  state = {
+    query: ''
+  }
 
-  const okButtonHandler = () => {
-    document.querySelector('.modal').classList.toggle('modal--shown');
-    document.querySelector('.modal').classList.toggle('modal--hidden');
+  passInput = e => {
+    this.props.okClickHandle(this.state.query);
   }
-  const cancelButtonHandler = () => {
-    document.querySelector('.modal').classList.toggle('modal--shown');
-    document.querySelector('.modal').classList.toggle('modal--hidden');
-  }
-  return (
-    <div className='modal modal--hidden'>
-      <div className='container'>
-        <div className='productPick'>
-          <Select />
-        </div>
-        <div className='buttonBox'>
-        <button 
-        onClick={okButtonHandler}
-        className='button--ok'>
-          OK
-        </button>
-        <button
-        onClick={cancelButtonHandler}
-        className='button--cancel'>
-          Cancel
-        </button>
+  render() {
+    return (
+      <div
+        className={
+          this.props.visible ? styles["modal--shown"] : styles["modal--hidden"]
+        }
+      >
+        <div className={styles.container}>
+          <div className={styles.productPick}>
+            <h2 className={styles.productPick__title}>
+              Enter your recipe (e.g 1 cup rice, 5 apples)
+            </h2>
+            <textarea
+              className={styles.productPick__textarea}
+              name="recipe"
+              rows="8"
+              cols="40"
+              onChange={e => this.setState({query: e.target.value})}
+            ></textarea>
+          </div>
+          <div className={styles.buttonBox}>
+            <input
+              type='submit'
+              value="OK"
+              onClick={this.passInput}
+              className={styles["button--ok"]}
+            ></input>
+            <button
+              onClick={this.props.cancelClickHandle}
+              className={styles["button--cancel"]}
+            >
+              Cancel
+            </button>
+          </div>
         </div>
       </div>
-    </div>
-  )
+    );
+  }
 }
 
 export default Modal;

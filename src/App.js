@@ -1,11 +1,11 @@
 import React from 'react';
-import './App.css';
+import styles from './App.module.css';
 import Start from './Start/Start';
 import Optimiser from './Optimiser/Optimiser';
 
 function App() {
   return (
-    <div className="App">
+    <div className={styles.App}>
       <Optimiser />
     </div>
   );

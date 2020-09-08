@@ -1,16 +1,23 @@
 .optimiser {
   font-family: "Baloo Tamma 2", cursive;
   display: flex;
+  flex-direction: column;
   height: 100vh;
   width: 100%;
+}
+
+.wrapper {
+  display: flex;
   flex-direction: row;
-  background-color: #25d4a0;
+  height: 100vh;
+  width: 100%;
 }
 
 .list {
   width: 40%;
+  min-width: 200px;
   box-sizing: border-box;
-  border-right: 2px solid #1a936f;
+  border-right: 2px solid #2A2B5F;
 }
 
 .list__button {
@@ -24,7 +31,8 @@
   padding: 0 16px;
   border-radius: 8px;
   cursor: pointer;
-  background-color: #1a936f;
+  background-color: #414394;
+  color: white;
   transition: all 0.1s linear;
 }
 .list__button:hover {
@@ -36,6 +44,7 @@
 
 .content {
   width: 60%;
+  background-color: #414394;
 }
 
 .modal--hidden {
@@ -67,7 +76,8 @@
   z-index: 99;
   width: 80%;
   height: 50%;
-  background-color: #25d4a0;
+  background-color: #414394;
+  color: white;
   animation: slide-up 0.5s ease-in-out;
 }
 @keyframes slide-up {
@@ -77,6 +87,20 @@
   100% {
     transform: translateY(0);
   }
+}
+
+.productPick__textarea {
+  font-family: "Baloo Tamma 2", cursive;
+  background-color: #2A2B5F;
+  max-width: 50%;
+  max-height: 50%;
+  padding: 8px;
+  font-size: 1em;
+  border-radius: 8px;
+  border: none;
+  resize: none;
+  outline: none;
+  color: white;
 }
 
 .buttonBox {
@@ -101,7 +125,8 @@
   padding: 0 16px;
   border-radius: 8px;
   cursor: pointer;
-  background-color: #1a936f;
+  background-color: #2A2B5F;
+  color: white;
   transition: all 0.1s linear;
 }
 .button--ok:hover,
@@ -109,4 +134,4 @@
   transform: scale(1.1);
 }
 
-/*# sourceMappingURL=ProductModal.css.map */
+/*# sourceMappingURL=ProductModal.module.css.map */

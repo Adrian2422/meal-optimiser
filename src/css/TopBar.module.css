@@ -1,16 +1,23 @@
 .optimiser {
   font-family: "Baloo Tamma 2", cursive;
   display: flex;
+  flex-direction: column;
   height: 100vh;
   width: 100%;
+}
+
+.wrapper {
+  display: flex;
   flex-direction: row;
-  background-color: #25d4a0;
+  height: 100vh;
+  width: 100%;
 }
 
 .list {
   width: 40%;
+  min-width: 200px;
   box-sizing: border-box;
-  border-right: 2px solid #1a936f;
+  border-right: 2px solid #2A2B5F;
 }
 
 .list__button {
@@ -24,7 +31,8 @@
   padding: 0 16px;
   border-radius: 8px;
   cursor: pointer;
-  background-color: #1a936f;
+  background-color: #414394;
+  color: white;
   transition: all 0.1s linear;
 }
 .list__button:hover {
@@ -36,16 +44,25 @@
 
 .content {
   width: 60%;
+  background-color: #414394;
 }
 
-.productPick {
-  padding: 16px;
+.TopBar {
+  display: flex;
+  height: 75px;
+  background-color: #2A2B5F;
+  color: white;
 }
-.productPick__select--1 {
-  font-family: "Baloo Tamma 2", cursive;
-  border: 1px solid #1a936f;
-  background-color: #cff7eb;
+.TopBar__backBtn {
+  border: none;
+  cursor: pointer;
   outline: none;
+  width: 50px;
+  background-color: #414394;
+}
+.TopBar__backBtn:after {
+  color: white;
+  content: "<";
 }
 
-/*# sourceMappingURL=select.css.map */
+/*# sourceMappingURL=topbar.module.css.map */

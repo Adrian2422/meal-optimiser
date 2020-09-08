@@ -1,5 +1,5 @@
 import React from 'react';
-import '../css/Start.css';
+import '../css/Start.module.css';
 
 function Start() {
 

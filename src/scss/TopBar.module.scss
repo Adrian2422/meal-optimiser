@@ -1,0 +1,18 @@
+@use './Optimiser.module.scss';
+
+.TopBar{
+  display: flex;
+  height: 75px;
+  background-color: Optimiser.$darkColorBg;
+  color: white;
+  &__backBtn{
+    @include Optimiser.buttonStyle;
+    width: 50px;
+    background-color: Optimiser.$lightColorBg;
+    &:after{
+      color: white;
+      content: '<';
+    }
+  }
+
+}

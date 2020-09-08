@@ -1,13 +1,19 @@
-@use './Optimiser.scss';
+@use './Optimiser.module.scss';
 .product{
   display: flex;
   margin: 8px;
   background-size: 200%;
   border-radius: 8px;
-  background-image: linear-gradient(to right, Optimiser.$darkColorBg 50%, rgb(252, 46, 46) 50%);
+  background-image: linear-gradient(to right, Optimiser.$lightColorBg 50%, rgb(252, 46, 46) 50%);
+  color: white;
   &--deleted{
-    transition: all .9s linear;
+    transition: all .5s linear;
     background-position-x: 100%;
+  }
+  &__image{
+    border-radius: 8px 0 0 8px;
+    height: 62px;
+    width: 62px;
   }
 }
 .product__container{
