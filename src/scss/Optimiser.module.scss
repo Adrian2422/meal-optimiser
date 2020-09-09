@@ -19,14 +19,29 @@ $lightColorBg: lighten($darkColorBg, 15%);
 .wrapper{
   display: flex;
   flex-direction: row;
-  height: 100vh;
+  height: calc(100% - 75px);
   width: 100%;
 }
 .list{
   width: 40%;
+  height: 100%;
   min-width: 200px;
+  overflow-y: auto;
   box-sizing: border-box;
   border-top: 2px solid $lightColorBg;
+  background-color: $darkColorBg;
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+  &::-webkit-scrollbar-track {
+    border-radius: 5px;
+    background-color: #ccd1d6;
+  }
+  &::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    border: 1px solid #555555;
+    background-color: $darkColorBg;
+  }
 }
 .content{
   width: 60%;

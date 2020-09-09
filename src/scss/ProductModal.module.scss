@@ -1,8 +1,8 @@
 @use './Optimiser.module.scss';
-.modal--hidden{
+.modal--hidden {
   display: none;
 }
-.modal--shown{
+.modal--shown {
   display: flex;
   flex-flow: column nowrap;
   position: absolute;
@@ -13,56 +13,56 @@
   z-index: 100;
   backdrop-filter: brightness(50%);
 }
-.container{
+.container {
   display: inherit;
   flex-flow: column nowrap;
   position: absolute;
   border-radius: 16px;
-	top:0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	margin: auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
   z-index: 99;
-  width: 80%;
+  width: 60%;
   height: 50%;
+  min-height: 500px;
   background-color: Optimiser.$lightColorBg;
   color: white;
-  animation: slide-up .5s ease-in-out;
+  animation: slide-up 0.5s ease-in-out;
   @keyframes slide-up {
-    0%{
+    0% {
       transform: translateY(200%);
     }
-    100%{
+    100% {
       transform: translateY(0);
     }
   }
 }
-.productPick__textarea{
-  @include Optimiser.globalFont();
-  background-color: Optimiser.$darkColorBg;
-  max-width: 50%;
-  max-height: 50%;
-  padding: 8px;
-  font-size: 1em;
-  border-radius: 8px;
-  border: none;
-  resize: none;
-  outline: none;
-  color: white;
+.productPick {
+  height: 100%;
+  &__textarea {
+    @include Optimiser.globalFont();
+    background-color: Optimiser.$darkColorBg;
+    height: auto;
+    max-width: 50%;
+    padding: 8px;
+    border-radius: 8px;
+    border: none;
+    resize: none;
+    outline: none;
+    color: white;
+  }
 }
-.buttonBox{
+.buttonBox {
   display: flex;
   box-sizing: border-box;
   width: 100%;
   padding: 16px;
-  position: absolute;
-  bottom: 0;
-  right: 0;
   justify-content: flex-end;
 }
 .button--ok,
-.button--cancel{
+.button--cancel {
   @include Optimiser.globalFont;
   @include Optimiser.buttonStyle;
   height: 50px;
@@ -72,8 +72,8 @@
   cursor: pointer;
   background-color: Optimiser.$darkColorBg;
   color: white;
-  transition: all .1s linear;
-  &:hover{
+  transition: all 0.1s linear;
+  &:hover {
     transform: scale(1.1);
   }
 }

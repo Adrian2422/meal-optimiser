@@ -11,7 +11,7 @@
     height: 50px;
     width: 50px;
     border-radius: 8px;
-    margin: 0 16px;
+    margin: 0 8px;
     background-color: Optimiser.$lightColorBg;
     transition: all 0.1s linear;
     &:after {
@@ -28,7 +28,7 @@
     @include Optimiser.buttonStyle();
     position: relative;
     height: 50px;
-    margin: 0 16px;
+    margin: 0 8px;
     padding: 0 16px;
     border-radius: 8px;
     background-color: Optimiser.$lightColorBg;

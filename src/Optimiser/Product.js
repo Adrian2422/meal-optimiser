@@ -16,7 +16,7 @@ const Product = props => {
       <ProductImg thumb={props.thumb}></ProductImg>
       <div className={styles.product__container}>
         <h2 className={styles.product__title}>{props.title}</h2>
-        <p className={styles.product__mass}>{props.mass}</p>
+        <p className={styles.product__mass}>{props.quantity} {props.unit} ({props.mass})</p>
       </div>
       <button
         onClick={deleteBtnHandler}

@@ -1,6 +1,7 @@
 @use './Optimiser.module.scss';
 .product{
   display: flex;
+  height: 75px;
   margin: 8px;
   background-size: 200%;
   border-radius: 8px;
@@ -20,10 +21,17 @@
   width: 80%;
 }
 .product__title{
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-size: 1.2em;
   margin: 0;
+  height: 50%;
 }
 .product__mass{
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin: 0;
 }
 .product__deleteBtn{

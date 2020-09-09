@@ -10,7 +10,7 @@ class TopBar extends Component {
           className={styles.TopBar__addButton}
           onClick={this.props.addBtnHandle}
         >
-          Add product
+          Add products to list
         </button>
       </div>
     );

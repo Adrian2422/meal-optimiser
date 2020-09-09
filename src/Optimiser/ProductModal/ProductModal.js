@@ -8,7 +8,9 @@ class Modal extends Component {
 
   passInput = (e) => {
     this.props.okClickHandle(this.state.query);
+    this.refs.recipe.value = '';
   };
+
   render() {
     return (
       <div
@@ -24,8 +26,9 @@ class Modal extends Component {
             <textarea
               className={styles.productPick__textarea}
               name="recipe"
-              rows="8"
-              cols="40"
+              ref='recipe'
+              rows="10"
+              cols="30"
               onChange={(e) => this.setState({ query: e.target.value })}
             ></textarea>
           </div>

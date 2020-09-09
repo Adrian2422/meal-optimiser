@@ -1,9 +1,10 @@
 import React from 'react';
+import styles from '../css/ProductImg.module.css'
 
 const ProductsImg = (props) => {
 
   return (
-    <img className='product__image' alt='product thumbnail' src={props.thumb}></img>
+    <img className={styles.product__image} alt='product thumbnail' src={props.thumb}></img>
   );
 }
 

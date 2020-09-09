@@ -1,7 +1,8 @@
 import React, { Component } from "react";
+import {idGenerator} from '../modules/IdGenerator';
 import Modal from "./ProductModal/ProductModal";
 import TopBar from "./TopBar";
-import ProductsList from "./ProductsList";
+import Product from './Product';
 import styles from "../css/Optimiser.module.css";
 
 class Optimiser extends Component {
@@ -13,11 +14,9 @@ class Optimiser extends Component {
     this.setState({ addBtnClicked: !this.state.addBtnClicked });
   };
   okButtonHandler = async (input) => {
-    console.log(input);
     this.setState({
       addBtnClicked: !this.state.addBtnClicked,
     });
-    //const recipe = document.querySelector(".productPick__textarea").value;
     const body = {
       query: input,
     };
@@ -33,7 +32,6 @@ class Optimiser extends Component {
         body: JSON.stringify(body),
       }
     );
-
     switch (response.status) {
       case 400:
         console.error(
@@ -60,25 +58,36 @@ class Optimiser extends Component {
       default:
         break;
     }
-
     response.json().then((data) => {
       const newState = { ...this.state };
       for (const key in data.foods) {
         newState.products.push({
+          id: idGenerator(6),
           name: data.foods[key]["food_name"],
           kcal: data.foods[key]["nf_calories"],
           weight: data.foods[key]["serving_weight_grams"],
-          thumb: data.foods[key]["photo"]["thumb"],
+          quantity: data.foods[key]["serving_qty"],
+          unit: data.foods[key]["serving_unit"],
+          thumb: data.foods[key]["photo"]["thumb"]
         });
 
         this.setState(newState);
-        document.querySelector(".productPick__textarea").value = "";
       }
     });
   };
   cancelButtonHandler = () => {
     this.setState({ addBtnClicked: !this.state.addBtnClicked });
   };
+  generateList = () => this.state.products.map((product) => 
+    <Product 
+    key={product.id}
+    title={product.name} 
+    mass={product.weight + 'g'}
+    quantity={product.quantity}
+    unit={product.unit}
+    thumb={product.thumb}>
+    </Product>
+  );
 
   render() {
     return (
@@ -86,7 +95,7 @@ class Optimiser extends Component {
         <TopBar addBtnHandle={this.listButtonHandler.bind(this)} />
         <div className={styles.wrapper}>
           <div className={styles.list}>
-            <ProductsList productList={this.state.products} />
+            {this.generateList()}
           </div>
           <div className={styles.content}></div>
         </div>
