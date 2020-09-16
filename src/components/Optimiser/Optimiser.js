@@ -3,11 +3,14 @@ import {idGenerator} from '../modules/IdGenerator';
 import Modal from "./ProductModal/ProductModal";
 import TopBar from "./TopBar";
 import Product from './Product';
-import styles from "../css/Optimiser.module.css";
+import styles from "../../css/Optimiser.module.css";
 
 class Optimiser extends Component {
+  iterator = 0;
+
   state = {
     products: [],
+    dataLoaded: null,
     addBtnClicked: false,
   };
   listButtonHandler = () => {
@@ -15,6 +18,7 @@ class Optimiser extends Component {
   };
   okButtonHandler = async (input) => {
     this.setState({
+      dataLoaded: false,
       addBtnClicked: !this.state.addBtnClicked,
     });
     const body = {
@@ -62,7 +66,8 @@ class Optimiser extends Component {
       const newState = { ...this.state };
       for (const key in data.foods) {
         newState.products.push({
-          id: idGenerator(6),
+          key: this.iterator,
+          id: idGenerator('prod_', 6),
           name: data.foods[key]["food_name"],
           kcal: data.foods[key]["nf_calories"],
           weight: data.foods[key]["serving_weight_grams"],
@@ -70,32 +75,51 @@ class Optimiser extends Component {
           unit: data.foods[key]["serving_unit"],
           thumb: data.foods[key]["photo"]["thumb"]
         });
-
+        this.iterator++;
         this.setState(newState);
       }
     });
+    this.setState({dataLoaded: true});
   };
   cancelButtonHandler = () => {
     this.setState({ addBtnClicked: !this.state.addBtnClicked });
   };
+  deleteBtnHandler = (event) => {
+      const targetId = event.target.closest('.Product').id;
+      const oldState = [ ...this.state.products ];
+      const index = oldState.findIndex(item => item.id === targetId);
+      oldState.splice(index, 1);
+      setTimeout(()=>{
+        this.setState({products: oldState});
+      }, 500);
+  };
   generateList = () => this.state.products.map((product) => 
     <Product 
-    key={product.id}
+    key={product.key}
+    id={product.id}
     title={product.name} 
     mass={product.weight + 'g'}
     quantity={product.quantity}
     unit={product.unit}
-    thumb={product.thumb}>
+    thumb={product.thumb}
+    deleteBtnHandler={this.deleteBtnHandler}>
     </Product>
   );
 
   render() {
+    let content;
+    if(!this.state.dataLoaded){
+      content = null;
+    } else {
+      content = this.generateList();
+    }
     return (
       <div className={styles.optimiser}>
         <TopBar addBtnHandle={this.listButtonHandler.bind(this)} />
         <div className={styles.wrapper}>
           <div className={styles.list}>
-            {this.generateList()}
+            {content}
+            {/* <Product key='prod_asgwe3' title='apple' quantity='1' unit='medium' mass='50g'></Product> */}
           </div>
           <div className={styles.content}></div>
         </div>

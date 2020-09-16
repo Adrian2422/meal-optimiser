@@ -19,8 +19,8 @@
   min-width: 200px;
   overflow-y: auto;
   box-sizing: border-box;
-  border-top: 2px solid #414394;
-  background-color: #2A2B5F;
+  border-top: 2px solid #297bc7;
+  background-color: #1c5488;
 }
 .list::-webkit-scrollbar {
   width: 8px;
@@ -32,19 +32,19 @@
 .list::-webkit-scrollbar-thumb {
   border-radius: 5px;
   border: 1px solid #555555;
-  background-color: #2A2B5F;
+  background-color: #1c5488;
 }
 
 .content {
   width: 60%;
-  background-color: #414394;
+  background-color: #297bc7;
 }
 
 .TopBar {
   display: flex;
   align-items: center;
   height: 75px;
-  background-color: #2A2B5F;
+  background-color: #1c5488;
   color: white;
 }
 .TopBar__backBtn {
@@ -55,7 +55,7 @@
   width: 50px;
   border-radius: 8px;
   margin: 0 8px;
-  background-color: #414394;
+  background-color: #297bc7;
   transition: all 0.1s linear;
 }
 .TopBar__backBtn:after {
@@ -75,7 +75,7 @@
   margin: 0 8px;
   padding: 0 16px;
   border-radius: 8px;
-  background-color: #414394;
+  background-color: #297bc7;
   color: white;
   transition: all 0.1s linear;
 }

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import styles from "../../css/ProductModal.module.css";
+import styles from "../../../css/ProductModal.module.css";
 
 class Modal extends Component {
   state = {
@@ -8,7 +8,6 @@ class Modal extends Component {
 
   passInput = (e) => {
     this.props.okClickHandle(this.state.query);
-    this.refs.recipe.value = '';
   };
 
   render() {
@@ -26,9 +25,9 @@ class Modal extends Component {
             <textarea
               className={styles.productPick__textarea}
               name="recipe"
-              ref='recipe'
               rows="10"
               cols="30"
+              value={this.state.query}
               onChange={(e) => this.setState({ query: e.target.value })}
             ></textarea>
           </div>
@@ -36,7 +35,10 @@ class Modal extends Component {
             <input
               type="submit"
               value="OK"
-              onClick={this.passInput}
+              onClick={(click) => {
+                this.passInput(click);
+                this.setState({ query: "" });
+              }}
               className={styles["button--ok"]}
             ></input>
             <button

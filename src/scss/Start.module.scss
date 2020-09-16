@@ -1,6 +1,5 @@
 $darkColorBg: #2A2B5F;
 $lightColorBg: lighten($darkColorBg, 15%);
-$whiteColorText: #ffffff;
 @mixin globalFont {
   font-family: 'Baloo Tamma 2', cursive;
 }
@@ -10,6 +9,7 @@ $whiteColorText: #ffffff;
   height: 100vh;
   width: 100%;
   flex-direction: column;
+  color: white;
 }
 .start__title{
   padding: 16px;

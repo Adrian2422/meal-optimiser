@@ -1,9 +1,9 @@
 import React from 'react';
 import styles from './App.module.css';
-import Start from './Start/Start';
-import Optimiser from './Optimiser/Optimiser';
+import Start from '../components/Start/Start';
+import Optimiser from '../components/Optimiser/Optimiser';
 
-function App() {
+const App = () => {
   return (
     <div className={styles.App}>
       <Optimiser />
