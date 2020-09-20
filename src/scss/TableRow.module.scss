@@ -1,0 +1,12 @@
+.cell{
+  border: 1px solid #fff;
+  padding: 0.5rem;
+}
+.alignRight {
+  @extend .cell;
+  text-align: right;
+}
+.alignLeft {
+  @extend .cell;
+  text-align: left;
+}

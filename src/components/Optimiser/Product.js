@@ -10,13 +10,16 @@ class Product extends Component {
     const eventTarget = event.target;
     eventTarget.closest('.Product').classList.add(`${styles["product--deleted"]}`);
   }
+
   render() {
     const productClasses = ['Product', styles.product];
     return (
       <div className={productClasses.join(' ')} id={this.props.id}>
         <div className={styles.product__wrapper}>
           <div className={styles.product__container}>
-            <ProductImg thumb={this.props.thumb}></ProductImg>
+            <ProductImg 
+            thumb={this.props.thumb}
+            ></ProductImg>
             <div className={styles.product__details}>
               <h2 className={styles.product__title}>{this.props.title}</h2>
               <p className={styles.product__mass}>

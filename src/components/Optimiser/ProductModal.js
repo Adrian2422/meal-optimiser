@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import styles from "../../../css/ProductModal.module.css";
+import styles from "../../css/ProductModal.module.css";
 
 class Modal extends Component {
   state = {

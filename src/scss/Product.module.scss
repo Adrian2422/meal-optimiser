@@ -1,6 +1,6 @@
 @use './Optimiser.module.scss';
 .product{
-  height: 75px;
+  height: auto;
   margin: 8px;
   background-size: 200%;
   border-radius: 8px;
@@ -31,11 +31,6 @@
   }
   &__mass{
     margin: 0;
-  }
-  &__image{
-    border-radius: 8px 0 0 8px;
-    height: 62px;
-    width: 62px;
   }
   &__deleteBtn{
     @include Optimiser.buttonStyle;

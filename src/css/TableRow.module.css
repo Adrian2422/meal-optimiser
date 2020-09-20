@@ -1,0 +1,14 @@
+.cell, .alignLeft, .alignRight {
+  border: 1px solid #fff;
+  padding: 0.5rem;
+}
+
+.alignRight {
+  text-align: right;
+}
+
+.alignLeft {
+  text-align: left;
+}
+
+/*# sourceMappingURL=TableRow.module.css.map */

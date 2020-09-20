@@ -40,6 +40,11 @@
   background-color: #297bc7;
 }
 
+.nutrientTablePlaceholder {
+  color: white;
+  font-size: 1.5rem;
+}
+
 .TopBar {
   display: flex;
   align-items: center;

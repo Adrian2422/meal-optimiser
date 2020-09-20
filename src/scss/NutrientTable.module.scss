@@ -1,0 +1,19 @@
+@use './Optimiser.module.scss';
+
+.ntable {
+  &__container {
+    width: fit-content;
+    color: white;
+    border-collapse: collapse;
+    background-color: Optimiser.$darkColorBg;
+    margin: 16px;
+  }
+  &__table{
+    padding: 8px;
+    border-collapse: collapse;
+  }
+  &__header{
+    padding: 0.5rem;
+    border: 1px solid #fff;
+  }
+}
