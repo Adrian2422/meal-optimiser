@@ -1,7 +1,7 @@
 import React from "react";
-import styles from "../../css/ProductImg.module.css";
+import styles from "../../../../css/ProductImg.module.css";
 
-const ProductsImg = (props) => {
+const productsImg = (props) => {
   return (
     <img
       className={styles.product__image}
@@ -11,4 +11,4 @@ const ProductsImg = (props) => {
   );
 };
 
-export default ProductsImg;
+export default productsImg;

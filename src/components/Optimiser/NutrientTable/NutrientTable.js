@@ -1,5 +1,5 @@
 import React from "react";
-import TableRow from "./TableRow";
+import TableRow from "./TableRow/TableRow";
 import styles from "../../../css/NutrientTable.module.css";
 
 const NutrientTable = (props) => {
@@ -12,13 +12,12 @@ const NutrientTable = (props) => {
       />
     );
 
-  
   return (
     <div className={styles.ntable__container}>
       <table className={styles.ntable__table}>
         <thead >
           <tr>
-            <th colSpan="2" className={styles.ntable__header}>Nutrients</th>
+            <th colSpan="2" className={styles.ntable__header}>Main nutrients</th>
           </tr>
         </thead>
         <tbody>

@@ -4,6 +4,7 @@
   display: flex;
   align-items: center;
   height: 75px;
+  width: 100%;
   background-color: Optimiser.$darkColorBg;
   color: white;
   &__backBtn {
@@ -14,10 +15,7 @@
     margin: 0 8px;
     background-color: Optimiser.$lightColorBg;
     transition: all 0.1s linear;
-    &:after {
-      color: white;
-      content: "<";
-    }
+    color: white;
     &:hover,
     &:active {
       transform: scale(1.1);

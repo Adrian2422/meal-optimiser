@@ -1,18 +1,4 @@
 @use './Optimiser.module.scss';
-.modal--hidden {
-  display: none;
-}
-.modal--shown {
-  display: flex;
-  flex-flow: column nowrap;
-  position: absolute;
-  height: 100vh;
-  width: 100vw;
-  top: 0;
-  left: 0;
-  z-index: 100;
-  backdrop-filter: brightness(50%);
-}
 .container {
   display: inherit;
   flex-flow: column nowrap;

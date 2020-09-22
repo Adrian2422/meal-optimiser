@@ -1,20 +1,18 @@
-import React, { Component } from "react";
+import React from "react";
 import styles from "../../css/TopBar.module.css";
+import Button from "../UI/Button/Button";
 
-class TopBar extends Component {
-  render() {
+const topBar = (props) => {
     return (
       <div className={styles.TopBar}>
-        <button className={styles.TopBar__backBtn}></button>
-        <button
-          className={styles.TopBar__addButton}
-          onClick={this.props.addBtnHandle}
-        >
-          Add products to list
-        </button>
+        <Button click={()=>{alert('back')}} class={styles.TopBar__backBtn} name={"<"}></Button>
+        <Button
+          click={props.addBtnHandle}
+          class={styles.TopBar__addButton}
+          name={"Add products to list"}
+        ></Button>
       </div>
     );
-  }
 }
 
-export default TopBar;
+export default topBar;

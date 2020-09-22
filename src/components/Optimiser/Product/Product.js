@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import styles from "../../css/Product.module.css";
-import ProductImg from "../Optimiser/ProductImg";
+import styles from "../../../css/Product.module.css";
+import ProductImg from "./ProductImg/ProductImg";
 
 class Product extends Component {
   deleted = false;
@@ -20,7 +20,7 @@ class Product extends Component {
             <ProductImg 
             thumb={this.props.thumb}
             ></ProductImg>
-            <div className={styles.product__details}>
+            <div className={styles.product__details} onClick={this.props.productClicked}>
               <h2 className={styles.product__title}>{this.props.title}</h2>
               <p className={styles.product__mass}>
                 {this.props.quantity} {this.props.unit} ({this.props.mass})
