@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Button from "../../UI/Button/Button";
 import AddProductFieldContext from "../../context/AddProducField-context";
+import Aux from "../../../hoc/Auxilliary";
 import styles from "../../../css/AddProductField.module.css";
 
 class addProductField extends Component {
@@ -14,15 +15,15 @@ class addProductField extends Component {
 
   render() {
     return (
-      <div className={styles.container}>
+      <Aux>
         <div className={styles.productPick}>
-          <h2 className={styles.productPick__title}>
+          <p className={styles.productPick__title}>
             Enter your recipe (e.g 1 cup of rice, 5 apples)
-          </h2>
+          </p>
           <textarea
             className={styles.productPick__textarea}
             name="recipe"
-            rows="10"
+            rows="5"
             cols="30"
             value={this.state.query}
             onChange={(e) => this.setState({ query: e.target.value })}
@@ -47,7 +48,7 @@ class addProductField extends Component {
             </div>
           )}
         </AddProductFieldContext.Consumer>
-      </div>
+      </Aux>
     );
   }
 }

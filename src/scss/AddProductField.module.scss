@@ -1,36 +1,8 @@
 @use './Optimiser.module.scss';
-.container {
-  display: inherit;
-  flex-flow: column nowrap;
-  position: absolute;
-  border-radius: 16px;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
-  z-index: 99;
-  width: 60%;
-  height: 50%;
-  min-height: 500px;
-  background-color: Optimiser.$lightColorBg;
-  color: white;
-  animation: slide-up 0.5s ease-in-out;
-  @keyframes slide-up {
-    0% {
-      transform: translateY(200%);
-    }
-    100% {
-      transform: translateY(0);
-    }
-  }
-}
 .productPick {
-  height: 100%;
   &__textarea {
     @include Optimiser.globalFont();
     background-color: Optimiser.$darkColorBg;
-    height: auto;
     max-width: 50%;
     padding: 8px;
     border-radius: 8px;
@@ -38,6 +10,18 @@
     resize: none;
     outline: none;
     color: white;
+    &::-webkit-scrollbar {
+      width: 8px;
+    }
+    &::-webkit-scrollbar-track {
+      border-radius: 5px;
+      background-color: #ccd1d6;
+    }
+    &::-webkit-scrollbar-thumb {
+      border-radius: 5px;
+      border: 1px solid black;
+      background-color: Optimiser.$lightColorBg;
+    }
   }
 }
 .buttonBox {

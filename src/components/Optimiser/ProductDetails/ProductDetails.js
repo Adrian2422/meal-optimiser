@@ -19,7 +19,7 @@ const productDetails = (props) => {
         <thead>
           <tr>
             <th colSpan="2" className={styles.Table__header}>
-              Full nutrients
+              Full nutrients of {props.name} in {props.weight}g
             </th>
           </tr>
         </thead>

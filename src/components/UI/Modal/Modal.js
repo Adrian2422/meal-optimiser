@@ -1,12 +1,17 @@
 import React from "react";
+import Backdrop from '../Backdrop/Backdrop';
+import Aux from '../../../hoc/Auxilliary';
 import styles from "../../../css/Modal.module.css";
 
 const modal = (props) => {
   return (
-    <div className={props.visible ? 
+    <Aux>
+      <div className={props.visible ? 
       styles["modal--shown"] : styles["modal--hidden"]}>
       {props.children}
     </div>
+    <Backdrop show={props.visible} clicked={props.modalClosed}></Backdrop>
+    </Aux>
   );
 };
 

@@ -73,7 +73,7 @@ class Optimiser extends Component {
     dataLoaded: null,
     modalShown: false,
     typeOfModal: '',
-    productClicked: [],
+    productClicked: null,
   };
   INITIAL_SHORT_NUTRIENTS = [
     {
@@ -272,6 +272,8 @@ class Optimiser extends Component {
     });
     const targetId = event.target.closest(".Product").id;
     const idx = this.state.products.findIndex((item) => item.id === targetId);
+    const targetName = this.state.products[idx].name;
+    const targetWeight = this.state.products[idx].weight;
     const targetNutrients = [...this.state.products[idx].full_nutrients];
     const necessaryIds = [
       208,
@@ -381,7 +383,7 @@ class Optimiser extends Component {
         });
       }
     });
-    this.setState({productClicked: nutrientArray});
+    this.setState({productClicked: [targetName, targetWeight, nutrientArray]});
   };
   generateList = () =>
     this.state.products.map((product) => (
@@ -433,7 +435,10 @@ class Optimiser extends Component {
         break;
       case 'ProductDetails':
         modalContent = (
-          <ProductDetails nutrients={this.state.productClicked}/>
+          <ProductDetails 
+          name={this.state.productClicked[0]} 
+          weight={this.state.productClicked[1]}
+          nutrients={this.state.productClicked[2]}/>
         );
         break;
       default:
@@ -459,7 +464,9 @@ class Optimiser extends Component {
           </div>
           <div className={styles.content}>{nutrientTable}</div>
         </div>
-        <Modal visible={this.state.modalShown}>
+        <Modal 
+        visible={this.state.modalShown}
+        modalClosed={this.cancelButtonHandler}>
           {modalContent}
         </Modal>
       </div>

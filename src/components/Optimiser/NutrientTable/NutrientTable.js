@@ -17,7 +17,7 @@ const NutrientTable = (props) => {
       <table className={styles.ntable__table}>
         <thead >
           <tr>
-            <th colSpan="2" className={styles.ntable__header}>Main nutrients</th>
+            <th colSpan="2" className={styles.ntable__header}>Nutrient summary</th>
           </tr>
         </thead>
         <tbody>

@@ -1,3 +1,50 @@
+.optimiser {
+  font-family: "Baloo Tamma 2", cursive;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  height: calc(100% - 75px);
+  width: 100%;
+}
+
+.list {
+  width: 40%;
+  height: 100%;
+  min-width: 200px;
+  overflow-y: auto;
+  box-sizing: border-box;
+  border-top: 2px solid #297bc7;
+  background-color: #1c5488;
+}
+.list::-webkit-scrollbar {
+  width: 8px;
+}
+.list::-webkit-scrollbar-track {
+  border-radius: 5px;
+  background-color: #ccd1d6;
+}
+.list::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  border: 1px solid #555555;
+  background-color: #1c5488;
+}
+
+.content {
+  width: 60%;
+  background-color: #297bc7;
+}
+
+.nutrientTablePlaceholder {
+  color: white;
+  font-size: 1.5rem;
+}
+
 .modal--hidden {
   display: none;
 }
@@ -5,13 +52,28 @@
 .modal--shown {
   display: flex;
   flex-flow: column nowrap;
-  position: absolute;
-  height: 100vh;
-  width: 100vw;
-  top: 0;
-  left: 0;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: fit-content;
+  width: 50%;
+  padding: 16px;
+  margin: auto;
+  box-sizing: border-box;
+  border-radius: 16px;
   z-index: 100;
-  backdrop-filter: brightness(50%);
+  background-color: #297bc7;
+  color: white;
+  animation: slide-up 0.5s ease-in-out;
+}
+@keyframes slide-up {
+  0% {
+    transform: translate(-50%, 100vh);
+  }
+  100% {
+    transform: translate(-50%, -50%);
+  }
 }
 
 /*# sourceMappingURL=Modal.module.css.map */

@@ -62,12 +62,16 @@
   width: 100%;
 }
 .product__details {
-  cursor: default;
+  cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-flow: column nowrap;
   width: 80%;
+  transition: transform 0.1s ease-out;
+}
+.product__details:hover {
+  transform: scale(1.1);
 }
 .product--deleted {
   transition: all 0.5s linear;
