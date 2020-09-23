@@ -270,7 +270,6 @@ class Optimiser extends Component {
       modalShown: !this.state.modalShown, 
       typeOfModal: 'ProductDetails'
     });
-    let iterator = 0;
     const targetId = event.target.closest(".Product").id;
     const idx = this.state.products.findIndex((item) => item.id === targetId);
     const targetNutrients = [...this.state.products[idx].full_nutrients];
@@ -338,7 +337,7 @@ class Optimiser extends Component {
       "Vitamin K",
       "Vitamin E",
     ];
-    const necessarySuffix = [
+    const necessarySuffixes = [
       "kcal",
       "g",
       "g",
@@ -371,15 +370,15 @@ class Optimiser extends Component {
       "mg",
     ];
     const nutrientArray = [];
-    targetNutrients.forEach((item, index) => {
+    targetNutrients.forEach(item => {
       if (necessaryIds.includes(item["attr_id"])) {
-        nutrientArray.push({
-          name: necessaryNames[index],
+        const i = necessaryIds.findIndex((el) => el === item["attr_id"]);
+        nutrientArray.splice(i, 1, {
+          name: necessaryNames[i],
           value: item["value"],
-          suffix: necessarySuffix[index],
-          key: iterator,
+          suffix: necessarySuffixes[i],
+          key: i,
         });
-        iterator++;
       }
     });
     this.setState({productClicked: nutrientArray});
