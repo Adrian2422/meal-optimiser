@@ -1,8 +1,8 @@
-@use './Optimiser.module.scss';
+@use './Global.module.scss';
 .productPick {
   &__textarea {
-    @include Optimiser.globalFont();
-    background-color: Optimiser.$darkColorBg;
+    @include Global.globalFont();
+    background-color: Global.$darkColorBg;
     max-width: 50%;
     padding: 8px;
     border-radius: 8px;
@@ -20,7 +20,7 @@
     &::-webkit-scrollbar-thumb {
       border-radius: 5px;
       border: 1px solid black;
-      background-color: Optimiser.$lightColorBg;
+      background-color: Global.$lightColorBg;
     }
   }
 }
@@ -33,14 +33,14 @@
 }
 .button--ok,
 .button--cancel {
-  @include Optimiser.globalFont;
-  @include Optimiser.buttonStyle;
+  @include Global.globalFont;
+  @include Global.buttonStyle;
   height: 50px;
   margin: 8px;
   padding: 0 16px;
   border-radius: 8px;
   cursor: pointer;
-  background-color: Optimiser.$darkColorBg;
+  background-color: Global.$darkColorBg;
   color: white;
   transition: all 0.1s linear;
   &:hover {

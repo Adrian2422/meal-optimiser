@@ -3,6 +3,8 @@ import axios from "axios";
 import { idGenerator } from "../modules/IdGenerator";
 import Modal from "../UI/Modal/Modal";
 import AddProductField from "./AddProductField/AddProductField";
+import Recipe from '../../print/ShoppingList';
+import RecipeItem from '../../print/ShoppingListItem/ShoppingListItem';
 import TopBar from "./TopBar";
 import Product from "./Product/Product";
 import ProductDetails from "./ProductDetails/ProductDetails";
@@ -151,6 +153,12 @@ class Optimiser extends Component {
     this.setState({
       modalShown: !this.state.modalShown,
       typeOfModal: "AddProductField",
+    });
+  };
+  printButtonHandler = () => {
+    this.setState({
+      modalShown: !this.state.modalShown,
+      typeOfModal: "Recipe",
     });
   };
   getProductsHandler = async (input) => {
@@ -381,6 +389,15 @@ class Optimiser extends Component {
       ></Product>
     ));
 
+  generateRecipe = () => this.state.products.map((product) => (
+      <RecipeItem 
+      key={product.id}
+      name={product.name}
+      quantity={product.quantity}
+      unit={product.unit}
+      weight={product.weight}
+      />
+    ));
   sumNutrients = (obj1, obj2) => {
     const oldNutrients = JSON.parse(JSON.stringify(obj1));
     for (let i = 0; i < obj2.length; i++) {
@@ -430,13 +447,23 @@ class Optimiser extends Component {
           />
         );
         break;
+      case "Recipe":
+        modalContent = (
+        <Recipe>
+          {this.generateRecipe()}
+        </Recipe>
+        )
+        break;
       default:
         modalContent = null;
     }
 
     return (
       <div className={styles.optimiser}>
-        <TopBar addBtnHandle={this.listButtonHandler.bind(this)} />
+        <TopBar 
+        printVisible={this.state.products.length}
+        addBtnHandle={this.listButtonHandler.bind(this)}
+        printClicked={this.printButtonHandler}/>
         <div className={styles.wrapper}>
           <div className={styles.list}>
             {/* <Product

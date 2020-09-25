@@ -1,19 +1,19 @@
-@use './Optimiser.module.scss';
+@use './Global.module.scss';
 
 .TopBar {
   display: flex;
   align-items: center;
   height: 75px;
   width: 100%;
-  background-color: Optimiser.$darkColorBg;
+  background-color: Global.$darkColorBg;
   color: white;
   &__backBtn {
-    @include Optimiser.buttonStyle;
+    @include Global.buttonStyle;
     height: 50px;
     width: 50px;
     border-radius: 8px;
     margin: 0 8px;
-    background-color: Optimiser.$lightColorBg;
+    background-color: Global.$lightColorBg;
     transition: all 0.1s linear;
     color: white;
     &:hover,
@@ -22,19 +22,20 @@
     }
   }
   &__addButton {
-    @include Optimiser.globalFont();
-    @include Optimiser.buttonStyle();
+    @include Global.globalFont();
+    @include Global.buttonStyle();
     position: relative;
     height: 50px;
     margin: 0 8px;
     padding: 0 16px;
     border-radius: 8px;
-    background-color: Optimiser.$lightColorBg;
+    background-color: Global.$lightColorBg;
     color: white;
     transition: all 0.1s linear;
     &:hover,
     &:active {
       transform: scale(1.1);
     }
+    @include Global.pop-out-animation();
   }
 }

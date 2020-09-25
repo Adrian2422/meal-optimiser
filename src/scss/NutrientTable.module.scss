@@ -1,4 +1,4 @@
-@use './Optimiser.module.scss';
+@use './Global.module.scss';
 
 .ntable {
   &__container {
@@ -6,6 +6,7 @@
     color: white;
     border-collapse: collapse;
     margin: 16px;
+    @include Global.pop-out-animation();
   }
   &__table{
     padding: 8px;

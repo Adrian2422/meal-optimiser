@@ -1,0 +1,32 @@
+.ShoppingList {
+  padding: 0.4cm 0.6cm;
+  width: fit-content;
+  max-width: 5cm;
+  font-size: 10pt;
+  margin: 16px auto;
+  background-color: white;
+  color: black;
+}
+.ShoppingList__title {
+  font-size: 14pt;
+  margin: 0;
+}
+.ShoppingList__printButton {
+  font-family: "Baloo Tamma 2", cursive;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  position: relative;
+  height: 50px;
+  margin: auto;
+  padding: 0 16px;
+  border-radius: 8px;
+  background-color: #1c5488;
+  color: white;
+  transition: all 0.1s linear;
+}
+.ShoppingList__printButton:hover, .ShoppingList__printButton:active {
+  transform: scale(1.1);
+}
+
+/*# sourceMappingURL=shoppinglist.module.css.map */

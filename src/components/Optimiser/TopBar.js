@@ -10,7 +10,13 @@ const topBar = (props) => {
           click={props.addBtnHandle}
           class={styles.TopBar__addButton}
           name={"Add products to list"}
-        ></Button>
+        />
+        {props.printVisible ? (<Button
+          click={props.printClicked}
+          class={styles.TopBar__addButton}
+          name={"Generate Shopping List"}
+        />) : null}
+        
       </div>
     );
 }

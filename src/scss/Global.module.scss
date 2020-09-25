@@ -1,0 +1,21 @@
+$darkColorBg: #1c5488;
+$lightColorBg: lighten($darkColorBg, 15%);
+@mixin buttonStyle {
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+@mixin globalFont {
+  font-family: 'Baloo Tamma 2', cursive;
+}
+@mixin pop-out-animation{
+  animation: pop-out .1s ease-in-out;
+    @keyframes pop-out {
+      0% {
+        transform: scale(0);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+}

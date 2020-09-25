@@ -1,4 +1,4 @@
-@use './Optimiser.module.scss';
+@use './Global.module.scss';
 
 .modal--hidden {
   display: none;
@@ -17,7 +17,7 @@
   box-sizing: border-box;
   border-radius: 16px;
   z-index: 100;
-  background-color: Optimiser.$lightColorBg;
+  background-color: Global.$lightColorBg;
   color: white;
   animation: slide-up 0.5s ease-in-out;
   @keyframes slide-up {

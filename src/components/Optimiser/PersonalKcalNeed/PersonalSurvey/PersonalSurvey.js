@@ -37,7 +37,7 @@ class PersonalSurvey extends Component {
               value="man"
               name="gender"
             />
-            <label for="man">Man</label>
+            <label htmlFor="man">Man</label>
             <input
               type="radio"
               id="woman"
@@ -48,10 +48,10 @@ class PersonalSurvey extends Component {
               value="woman"
               name="gender"
             />
-            <label for="woman">Woman</label>
+            <label htmlFor="woman">Woman</label>
           </div>
           <div className={styles.PersonalSurvey__rightCol}>
-            <label for="age">Age</label>
+            <label htmlFor="age">Age</label>
             <input
               type="number"
               className={styles.PersonalSurvey__input}
@@ -61,7 +61,7 @@ class PersonalSurvey extends Component {
               }}
               id="age"
             />
-            <label for="height">Height (cm)</label>
+            <label htmlFor="height">Height (cm)</label>
             <input
               type="number"
               className={styles.PersonalSurvey__input}
@@ -71,7 +71,7 @@ class PersonalSurvey extends Component {
               }}
               id="height"
             />
-            <label for="weight">Weight (kg)</label>
+            <label htmlFor="weight">Weight (kg)</label>
             <input
               type="number"
               className={styles.PersonalSurvey__input}
@@ -81,7 +81,7 @@ class PersonalSurvey extends Component {
               }}
               id="weight"
             />
-            <label for="activity">Activity</label>
+            <label htmlFor="activity">Activity</label>
             <select
               id="activity"
               className={styles.PersonalSurvey__select}
