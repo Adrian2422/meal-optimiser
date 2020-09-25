@@ -1,0 +1,23 @@
+@use 'Optimiser.module.scss';
+.PersonalKcalNeed{
+  max-width: 50%;
+  margin: 16px;
+  color: white;
+  &__button{
+    @include Optimiser.globalFont();
+    @include Optimiser.buttonStyle();
+    position: relative;
+    height: 50px;
+    margin: 0 8px;
+    padding: 0 16px;
+    border-radius: 8px;
+    background-color: Optimiser.$darkColorBg;
+    color: white;
+    transition: all 0.1s linear;
+    &:hover,
+    &:active {
+      transform: scale(1.1);
+    }
+  }
+  
+}

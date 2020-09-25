@@ -1,0 +1,29 @@
+@use 'Optimiser.module.scss';
+.PersonalSurvey{
+  padding: 16px;
+  display: flex;
+  flex-flow: column nowrap;
+  color: white;
+  &__leftCol,
+  &__rightCol{
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  &__input,
+  &__select{
+  font-size: 16px;
+  padding: 0.25em 0.5em;
+  width: 60%;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+  background-color: Optimiser.$darkColorBg;
+  color: white;
+  &::-webkit-inner-spin-button,
+  &::-webkit-outer-spin-button{
+    -webkit-appearance: none;
+  }
+  }
+}

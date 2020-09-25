@@ -48,35 +48,30 @@
   font-size: 1.5rem;
 }
 
-.modal--hidden {
-  display: none;
-}
-
-.modal--shown {
+.PersonalSurvey {
+  padding: 16px;
   display: flex;
   flex-flow: column nowrap;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  height: fit-content;
-  width: 50%;
-  padding: 16px;
-  margin: auto;
-  box-sizing: border-box;
-  border-radius: 16px;
-  z-index: 100;
-  background-color: #297bc7;
   color: white;
-  animation: slide-up 0.5s ease-in-out;
 }
-@keyframes slide-up {
-  0% {
-    transform: translate(-50%, 100vh);
-  }
-  100% {
-    transform: translate(-50%, -50%);
-  }
+.PersonalSurvey__leftCol, .PersonalSurvey__rightCol {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+}
+.PersonalSurvey__input, .PersonalSurvey__select {
+  font-size: 16px;
+  padding: 0.25em 0.5em;
+  width: 60%;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+  background-color: #1c5488;
+  color: white;
+}
+.PersonalSurvey__input::-webkit-inner-spin-button, .PersonalSurvey__input::-webkit-outer-spin-button, .PersonalSurvey__select::-webkit-inner-spin-button, .PersonalSurvey__select::-webkit-outer-spin-button {
+  -webkit-appearance: none;
 }
 
-/*# sourceMappingURL=Modal.module.css.map */
+/*# sourceMappingURL=personalsurvey.module.css.map */

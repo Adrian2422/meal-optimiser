@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import axios from "axios";
 import { idGenerator } from "../modules/IdGenerator";
 import Modal from "../UI/Modal/Modal";
 import AddProductField from "./AddProductField/AddProductField";
@@ -6,6 +7,7 @@ import TopBar from "./TopBar";
 import Product from "./Product/Product";
 import ProductDetails from "./ProductDetails/ProductDetails";
 import NutrientTable from "./NutrientTable/NutrientTable";
+import PersonalKcalNeed from './PersonalKcalNeed/PersonalKcalNeed';
 import AddProductFieldContext from "../context/AddProducField-context";
 import styles from "../../css/Optimiser.module.css";
 
@@ -70,9 +72,10 @@ class Optimiser extends Component {
         key: 10,
       },
     ],
-    dataLoaded: null,
+    personalKcal: 0,
     modalShown: false,
-    typeOfModal: '',
+    dataLoaded: null,
+    typeOfModal: null,
     productClicked: null,
   };
   INITIAL_SHORT_NUTRIENTS = [
@@ -145,10 +148,12 @@ class Optimiser extends Component {
   ];
 
   listButtonHandler = () => {
-    this.setState({ modalShown: !this.state.modalShown,
-    typeOfModal: 'AddProductField'});
+    this.setState({
+      modalShown: !this.state.modalShown,
+      typeOfModal: "AddProductField",
+    });
   };
-  okButtonHandler = async (input) => {
+  getProductsHandler = async (input) => {
     this.setState({
       dataLoaded: false,
       modalShown: !this.state.modalShown,
@@ -156,89 +161,63 @@ class Optimiser extends Component {
     const body = {
       query: input,
     };
-    const response = await fetch(
-      "https://trackapi.nutritionix.com/v2/natural/nutrients",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "x-app-id": "2216a622",
-          "x-app-key": "51f1cc35a6825eb86b554350da8f159b",
-        },
-        body: JSON.stringify(body),
-      }
-    );
-    switch (response.status) {
-      case 400:
-        console.error(
-          "Validation Error, Invalid input parameters, Invalid request"
-        );
-        break;
-      case 401:
-        console.error(
-          "Unauthorized, Invalid auth keys, Usage limits exceeded, Missing tokens"
-        );
-        break;
-      case 403:
-        console.error("Forbidden, Disallowed entity");
-        break;
-      case 404:
-        console.error("Resource not found");
-        break;
-      case 409:
-        console.error("Resource conflict, Resource already exists");
-        break;
-      case 500:
-        console.error("Base error, internal server error, request failed");
-        break;
-      default:
-        break;
-    }
-    response
-      .json()
-      .then((data) => {
+    const config = {
+      headers: {
+        "Content-Type": "application/json",
+        "x-app-id": "2216a622",
+        "x-app-key": "51f1cc35a6825eb86b554350da8f159b",
+      },
+    };
+    axios.post("https://trackapi.nutritionix.com/v2/natural/nutrients", body, config)
+      .then((response) => {
         const newProductsState = [...this.state.products];
-        for (const key in data.foods) {
+        for (const key in response.data.foods) {
           newProductsState.push({
             key: this.iterator,
             id: idGenerator("prod_", 6),
-            name: data.foods[key]["food_name"],
-            weight: data.foods[key]["serving_weight_grams"],
-            quantity: data.foods[key]["serving_qty"],
-            unit: data.foods[key]["serving_unit"],
-            thumb: data.foods[key]["photo"]["thumb"],
+            name: response.data.foods[key]["food_name"],
+            weight: response.data.foods[key]["serving_weight_grams"],
+            quantity: response.data.foods[key]["serving_qty"],
+            unit: response.data.foods[key]["serving_unit"],
+            thumb: response.data.foods[key]["photo"]["thumb"],
             short_nutrients: [
               {
                 name: "_calories",
-                value: data.foods[key]["nf_calories"],
+                value: response.data.foods[key]["nf_calories"],
               },
               {
                 name: "_total_fat",
-                value: data.foods[key]["nf_total_fat"],
+                value: response.data.foods[key]["nf_total_fat"],
               },
               {
                 name: "_saturated_fat",
-                value: data.foods[key]["nf_saturated_fat"],
+                value: response.data.foods[key]["nf_saturated_fat"],
               },
               {
                 name: "_cholesterol",
-                value: data.foods[key]["nf_cholesterol"],
+                value: response.data.foods[key]["nf_cholesterol"],
               },
-              { name: "_sodium", value: data.foods[key]["nf_sodium"] },
+              { name: "_sodium", value: response.data.foods[key]["nf_sodium"] },
               {
                 name: "_total_carbohydrate",
-                value: data.foods[key]["nf_total_carbohydrate"],
+                value: response.data.foods[key]["nf_total_carbohydrate"],
               },
               {
                 name: "_dietary_fiber",
-                value: data.foods[key]["nf_dietary_fiber"],
+                value: response.data.foods[key]["nf_dietary_fiber"],
               },
-              { name: "_sugars", value: data.foods[key]["nf_sugars"] },
-              { name: "_protein", value: data.foods[key]["nf_protein"] },
-              { name: "_potassium", value: data.foods[key]["nf_potassium"] },
-              { name: "_p", value: data.foods[key]["nf_p"] },
+              { name: "_sugars", value: response.data.foods[key]["nf_sugars"] },
+              {
+                name: "_protein",
+                value: response.data.foods[key]["nf_protein"],
+              },
+              {
+                name: "_potassium",
+                value: response.data.foods[key]["nf_potassium"],
+              },
+              { name: "_p", value: response.data.foods[key]["nf_p"] },
             ],
-            full_nutrients: data.foods[key]["full_nutrients"],
+            full_nutrients: response.data.foods[key]["full_nutrients"],
           });
           this.iterator++;
           this.setState({ products: newProductsState });
@@ -251,7 +230,7 @@ class Optimiser extends Component {
         this.setState({ dataLoaded: true });
       });
   };
-  cancelButtonHandler = () => {
+  closeModalHandler = () => {
     this.setState({ modalShown: !this.state.modalShown });
   };
   deleteBtnHandler = (event) => {
@@ -267,8 +246,8 @@ class Optimiser extends Component {
   };
   showProductDetails = (event) => {
     this.setState({
-      modalShown: !this.state.modalShown, 
-      typeOfModal: 'ProductDetails'
+      modalShown: !this.state.modalShown,
+      typeOfModal: "ProductDetails",
     });
     const targetId = event.target.closest(".Product").id;
     const idx = this.state.products.findIndex((item) => item.id === targetId);
@@ -372,7 +351,7 @@ class Optimiser extends Component {
       "mg",
     ];
     const nutrientArray = [];
-    targetNutrients.forEach(item => {
+    targetNutrients.forEach((item) => {
       if (necessaryIds.includes(item["attr_id"])) {
         const i = necessaryIds.findIndex((el) => el === item["attr_id"]);
         nutrientArray.splice(i, 1, {
@@ -383,7 +362,9 @@ class Optimiser extends Component {
         });
       }
     });
-    this.setState({productClicked: [targetName, targetWeight, nutrientArray]});
+    this.setState({
+      productClicked: [targetName, targetWeight, nutrientArray],
+    });
   };
   generateList = () =>
     this.state.products.map((product) => (
@@ -411,7 +392,13 @@ class Optimiser extends Component {
   };
 
   render() {
-    const listContent = !this.state.dataLoaded ? null : this.generateList();
+    const listContent = !this.state.dataLoaded ? (
+      this.state.dataLoaded === false ? (
+        <p style={{ color: "white" }}>Loading, please wait...</p>
+      ) : null
+    ) : (
+      this.generateList()
+    );
     const nutrientTable = !this.state.products.length ? (
       <p className={styles.nutrientTablePlaceholder}>
         Start adding products to the list!
@@ -419,26 +406,28 @@ class Optimiser extends Component {
     ) : (
       <NutrientTable nutrients={this.state.nutrients} />
     );
+    const kcalCalculate = !this.state.products.length ? null : <PersonalKcalNeed />
     let modalContent;
-    switch(this.state.typeOfModal){
-      case 'AddProductField':
+    switch (this.state.typeOfModal) {
+      case "AddProductField":
         modalContent = (
           <AddProductFieldContext.Provider
             value={{
-              okClickHandle: this.okButtonHandler,
-              cancelClickHandle: this.cancelButtonHandler.bind(this),
+              okClickHandle: this.getProductsHandler,
+              cancelClickHandle: this.closeModalHandler.bind(this),
             }}
           >
             <AddProductField />
           </AddProductFieldContext.Provider>
         );
         break;
-      case 'ProductDetails':
+      case "ProductDetails":
         modalContent = (
-          <ProductDetails 
-          name={this.state.productClicked[0]} 
-          weight={this.state.productClicked[1]}
-          nutrients={this.state.productClicked[2]}/>
+          <ProductDetails
+            name={this.state.productClicked[0]}
+            weight={this.state.productClicked[1]}
+            nutrients={this.state.productClicked[2]}
+          />
         );
         break;
       default:
@@ -450,7 +439,7 @@ class Optimiser extends Component {
         <TopBar addBtnHandle={this.listButtonHandler.bind(this)} />
         <div className={styles.wrapper}>
           <div className={styles.list}>
-            <Product
+            {/* <Product
               key={5674567}
               id={"prod_test00"}
               title={"test"}
@@ -459,14 +448,18 @@ class Optimiser extends Component {
               unit={"cup"}
               productClicked={this.showProductDetails}
               deleteBtnHandler={this.deleteBtnHandler}
-            />
+            /> */}
             {listContent}
           </div>
-          <div className={styles.content}>{nutrientTable}</div>
+          <div className={styles.content}>
+            {nutrientTable}
+            {kcalCalculate}
+          </div>
         </div>
-        <Modal 
-        visible={this.state.modalShown}
-        modalClosed={this.cancelButtonHandler}>
+        <Modal
+          visible={this.state.modalShown}
+          modalClosed={this.closeModalHandler}
+        >
           {modalContent}
         </Modal>
       </div>

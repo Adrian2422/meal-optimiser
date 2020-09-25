@@ -1,13 +1,13 @@
 @use './Optimiser.module.scss';
 .Container {
-  min-height: 500px;
+  max-height: 500px;
   height: calc(100% - 72px);
 }
 .Table {
+  max-height: 400px;
   height: 100%;
   padding: 8px;
   margin: 36px;
-  height: calc(100% - 72px);
   border-collapse: collapse;
   display: inline-block;
   overflow: auto;
