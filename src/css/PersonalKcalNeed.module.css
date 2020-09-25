@@ -53,22 +53,5 @@
   margin: 16px;
   color: white;
 }
-.PersonalKcalNeed__button {
-  font-family: "Baloo Tamma 2", cursive;
-  border: none;
-  cursor: pointer;
-  outline: none;
-  position: relative;
-  height: 50px;
-  margin: 0 8px;
-  padding: 0 16px;
-  border-radius: 8px;
-  background-color: #1c5488;
-  color: white;
-  transition: all 0.1s linear;
-}
-.PersonalKcalNeed__button:hover, .PersonalKcalNeed__button:active {
-  transform: scale(1.1);
-}
 
-/*# sourceMappingURL=personalkcalneed.module.css.map */
+/*# sourceMappingURL=PersonalKcalNeed.module.css.map */

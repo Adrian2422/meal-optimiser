@@ -73,5 +73,28 @@
 .PersonalSurvey__input::-webkit-inner-spin-button, .PersonalSurvey__input::-webkit-outer-spin-button, .PersonalSurvey__select::-webkit-inner-spin-button, .PersonalSurvey__select::-webkit-outer-spin-button {
   -webkit-appearance: none;
 }
+.PersonalSurvey__wrapper {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-around;
+}
+.PersonalSurvey__button {
+  font-family: "Baloo Tamma 2", cursive;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  position: relative;
+  height: 50px;
+  width: fit-content;
+  margin: 16px auto;
+  padding: 0 16px;
+  border-radius: 8px;
+  background-color: #1c5488;
+  color: white;
+  transition: all 0.1s linear;
+}
+.PersonalSurvey__button:hover, .PersonalSurvey__button:active {
+  transform: scale(1.1);
+}
 
-/*# sourceMappingURL=personalsurvey.module.css.map */
+/*# sourceMappingURL=PersonalSurvey.module.css.map */

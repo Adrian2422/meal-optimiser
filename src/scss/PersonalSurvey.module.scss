@@ -21,9 +21,31 @@
   outline: none;
   background-color: Optimiser.$darkColorBg;
   color: white;
-  &::-webkit-inner-spin-button,
-  &::-webkit-outer-spin-button{
-    -webkit-appearance: none;
+    &::-webkit-inner-spin-button,
+    &::-webkit-outer-spin-button{
+      -webkit-appearance: none;
+    }
   }
+  &__wrapper{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-around;
+  }
+  &__button{
+    @include Optimiser.globalFont();
+    @include Optimiser.buttonStyle();
+    position: relative;
+    height: 50px;
+    width: fit-content;
+    margin: 16px auto;
+    padding: 0 16px;
+    border-radius: 8px;
+    background-color: Optimiser.$darkColorBg;
+    color: white;
+    transition: all 0.1s linear;
+    &:hover,
+    &:active {
+      transform: scale(1.1);
+    }
   }
 }
