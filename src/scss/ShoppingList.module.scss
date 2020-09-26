@@ -1,13 +1,16 @@
 @use './Global.module.scss';
 
 .ShoppingList{
-  padding: .4cm .6cm;
   width: fit-content;
   max-width: 5cm;
   font-size: 10pt;
-  margin: 16px auto;
+  margin: .5cm auto;
   background-color: white;
   color: black;
+  &__printWrapper{
+    padding: .4cm .6cm;
+    border: 1px solid black;
+  }
   &__title{
     font-size: 14pt;
     margin: 0;

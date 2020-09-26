@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import axios from "axios";
-import { idGenerator } from "../modules/IdGenerator";
+import { idGenerator } from "../../services/IdGenerator";
 import Modal from "../UI/Modal/Modal";
 import AddProductField from "./AddProductField/AddProductField";
-import Recipe from '../../print/ShoppingList';
-import RecipeItem from '../../print/ShoppingListItem/ShoppingListItem';
+import ShoppingList from '../../print/ShoppingList';
+import ShoppingListItem from '../../print/ShoppingListItem/ShoppingListItem';
 import TopBar from "./TopBar";
 import Product from "./Product/Product";
 import ProductDetails from "./ProductDetails/ProductDetails";
@@ -390,7 +390,7 @@ class Optimiser extends Component {
     ));
 
   generateRecipe = () => this.state.products.map((product) => (
-      <RecipeItem 
+      <ShoppingListItem 
       key={product.id}
       name={product.name}
       quantity={product.quantity}
@@ -449,9 +449,9 @@ class Optimiser extends Component {
         break;
       case "Recipe":
         modalContent = (
-        <Recipe>
+        <ShoppingList>
           {this.generateRecipe()}
-        </Recipe>
+        </ShoppingList>
         )
         break;
       default:

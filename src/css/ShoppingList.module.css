@@ -1,11 +1,14 @@
 .ShoppingList {
-  padding: 0.4cm 0.6cm;
   width: fit-content;
   max-width: 5cm;
   font-size: 10pt;
-  margin: 16px auto;
+  margin: 0.5cm auto;
   background-color: white;
   color: black;
+}
+.ShoppingList__printWrapper {
+  padding: 0.4cm 0.6cm;
+  border: 1px solid black;
 }
 .ShoppingList__title {
   font-size: 14pt;
@@ -29,4 +32,4 @@
   transform: scale(1.1);
 }
 
-/*# sourceMappingURL=shoppinglist.module.css.map */
+/*# sourceMappingURL=ShoppingList.module.css.map */

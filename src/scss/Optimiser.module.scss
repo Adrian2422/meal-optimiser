@@ -1,15 +1,7 @@
-$darkColorBg: #1c5488;
-$lightColorBg: lighten($darkColorBg, 15%);
-@mixin buttonStyle {
-  border: none;
-  cursor: pointer;
-  outline: none;
-}
-@mixin globalFont {
-  font-family: 'Baloo Tamma 2', cursive;
-}
+@use './Global.module.scss';
+
 .optimiser{
-  @include globalFont();
+  @include Global.globalFont();
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -28,8 +20,8 @@ $lightColorBg: lighten($darkColorBg, 15%);
   min-width: 200px;
   overflow-y: auto;
   box-sizing: border-box;
-  border-top: 2px solid $lightColorBg;
-  background-color: $darkColorBg;
+  border-top: 2px solid Global.$lightColorBg;
+  background-color: Global.$darkColorBg;
   &::-webkit-scrollbar {
     width: 8px;
   }
@@ -40,14 +32,15 @@ $lightColorBg: lighten($darkColorBg, 15%);
   &::-webkit-scrollbar-thumb {
     border-radius: 5px;
     border: 1px solid #555555;
-    background-color: $darkColorBg;
+    background-color: Global.$darkColorBg;
   }
 }
 .content{
   display: flex;
   flex-flow: row wrap;
+  justify-content: space-around;
   width: 60%;
-  background-color: $lightColorBg;
+  background-color: Global.$lightColorBg;
 }
 
 .nutrientTablePlaceholder{
