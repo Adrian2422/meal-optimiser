@@ -1,6 +1,6 @@
 import React from "react";
 import TableRow from "./TableRow/TableRow";
-import styles from "../../../css/NutrientTable.module.css";
+import styles from "../../../css/Optimiser/NutrientTable.module.css";
 
 const NutrientTable = (props) => {
   const generateRows = () => props.nutrients.map((item) => 

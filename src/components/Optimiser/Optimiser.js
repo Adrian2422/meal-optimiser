@@ -11,7 +11,7 @@ import ProductDetails from "./ProductDetails/ProductDetails";
 import NutrientTable from "./NutrientTable/NutrientTable";
 import PersonalKcalNeed from './PersonalKcalNeed/PersonalKcalNeed';
 import AddProductFieldContext from "../context/AddProducField-context";
-import styles from "../../css/Optimiser.module.css";
+import styles from "../../css/Optimiser/Optimiser.module.css";
 
 class Optimiser extends Component {
   iterator = 0;

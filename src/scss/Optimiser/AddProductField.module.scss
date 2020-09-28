@@ -3,7 +3,7 @@
   &__textarea {
     @include Global.globalFont();
     background-color: Global.$darkColorBg;
-    max-width: 50%;
+    max-width: 70%;
     padding: 8px;
     border-radius: 8px;
     border: none;
@@ -45,5 +45,11 @@
   transition: all 0.1s linear;
   &:hover {
     transform: scale(1.1);
+  }
+}
+
+@media (max-width: 500px) {
+  .buttonBox{
+    justify-content: center;
   }
 }

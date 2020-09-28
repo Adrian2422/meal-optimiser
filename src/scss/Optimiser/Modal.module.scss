@@ -29,3 +29,9 @@
     }
   }
 }
+
+@media (max-width: 500px) {
+  .modal--shown{
+    width: 70%;
+  }
+}

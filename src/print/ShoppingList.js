@@ -3,7 +3,7 @@ import domtoimage from "dom-to-image";
 import jsPDF from "jspdf";
 import Aux from "../hoc/Auxilliary";
 import Button from "../components/UI/Button/Button";
-import styles from "../css/ShoppingList.module.css";
+import styles from "../css/Optimiser/ShoppingList.module.css";
 
 const recipe = (props) => {
   const printDocument = () => {

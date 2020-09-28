@@ -1,0 +1,15 @@
+.PersonalKcalNeed {
+  margin: 16px;
+  color: white;
+}
+
+@media (max-width: 500px) {
+  .PersonalKcalNeed {
+    border-top: 2px solid #1c5488;
+  }
+  .PersonalKcalNeed__text {
+    font-size: 8vw;
+  }
+}
+
+/*# sourceMappingURL=PersonalKcalNeed.module.css.map */

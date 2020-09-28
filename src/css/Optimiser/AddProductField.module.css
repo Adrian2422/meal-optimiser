@@ -1,7 +1,7 @@
 .productPick__textarea {
   font-family: "Baloo Tamma 2", cursive;
   background-color: #1c5488;
-  max-width: 50%;
+  max-width: 70%;
   padding: 8px;
   border-radius: 8px;
   border: none;
@@ -48,6 +48,12 @@
 .button--ok:hover,
 .button--cancel:hover {
   transform: scale(1.1);
+}
+
+@media (max-width: 500px) {
+  .buttonBox {
+    justify-content: center;
+  }
 }
 
 /*# sourceMappingURL=AddProductField.module.css.map */

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Button from "../../../UI/Button/Button";
-import styles from "../../../../css/PersonalSurvey.module.css";
+import styles from "../../../../css/Optimiser/PersonalSurvey.module.css";
 
 class PersonalSurvey extends Component {
   state = {

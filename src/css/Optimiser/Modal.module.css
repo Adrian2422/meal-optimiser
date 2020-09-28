@@ -29,4 +29,10 @@
   }
 }
 
+@media (max-width: 500px) {
+  .modal--shown {
+    width: 70%;
+  }
+}
+
 /*# sourceMappingURL=Modal.module.css.map */

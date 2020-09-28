@@ -1,6 +1,6 @@
 import React from "react";
 import TableRow from "./TableRow/TableRow";
-import styles from "../../../css/ProductDetails.module.css";
+import styles from "../../../css/Optimiser/ProductDetails.module.css";
 
 const productDetails = (props) => {
   const generateRows = () =>

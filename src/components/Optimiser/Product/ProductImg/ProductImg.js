@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "../../../../css/ProductImg.module.css";
+import styles from "../../../../css/Optimiser/ProductImg.module.css";
 
 const productsImg = (props) => {
   return (

@@ -1,12 +1,26 @@
 .ShoppingList {
   width: fit-content;
+  max-height: 500px;
   max-width: 5cm;
   font-size: 10pt;
+  padding-right: 5px;
   margin: 0.5cm auto;
-  background-color: white;
+  overflow: auto;
   color: black;
 }
+.ShoppingList::-webkit-scrollbar {
+  width: 8px;
+}
+.ShoppingList::-webkit-scrollbar-track {
+  border-radius: 5px;
+  background-color: #ccd1d6;
+}
+.ShoppingList::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-color: #1c5488;
+}
 .ShoppingList__printWrapper {
+  background-color: white;
   padding: 0.4cm 0.6cm;
   border: 1px solid black;
 }

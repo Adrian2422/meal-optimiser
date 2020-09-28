@@ -4,6 +4,7 @@
   flex-direction: column;
   height: 100vh;
   width: 100%;
+  background-color: #297bc7;
 }
 
 .wrapper {
@@ -14,11 +15,13 @@
 }
 
 .list {
+  display: flex;
+  flex-flow: column nowrap;
   width: 40%;
   height: 100%;
   min-width: 200px;
-  overflow-y: auto;
   box-sizing: border-box;
+  border-radius: 0 5px 5px 0;
   border-top: 2px solid #297bc7;
   background-color: #1c5488;
 }
@@ -31,7 +34,7 @@
 }
 .list::-webkit-scrollbar-thumb {
   border-radius: 5px;
-  border: 1px solid #555555;
+  border: 1px solid black;
   background-color: #1c5488;
 }
 
@@ -40,7 +43,20 @@
   flex-flow: row wrap;
   justify-content: space-around;
   width: 60%;
+  overflow: auto;
   background-color: #297bc7;
+}
+.content::-webkit-scrollbar {
+  width: 8px;
+}
+.content::-webkit-scrollbar-track {
+  border-radius: 5px;
+  background-color: #ccd1d6;
+}
+.content::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  border: 1px solid black;
+  background-color: #1c5488;
 }
 
 .nutrientTablePlaceholder {
@@ -49,9 +65,30 @@
   font-size: 1.5rem;
 }
 
-.PersonalKcalNeed {
-  margin: 16px;
-  color: white;
+@media (max-width: 500px) {
+  .optimiser {
+    font-size: 4vw;
+    min-height: 100vh;
+    height: 100vh;
+    overflow: auto;
+  }
+
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    height: calc(100% - 75px);
+    width: 100%;
+  }
+
+  .list {
+    height: fit-content;
+    width: 100%;
+  }
+
+  .content {
+    overflow: visible;
+    width: 100%;
+  }
 }
 
-/*# sourceMappingURL=PersonalKcalNeed.module.css.map */
+/*# sourceMappingURL=Optimiser.module.css.map */

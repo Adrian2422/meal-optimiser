@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import PersonalSurvey from "./PersonalSurvey/PersonalSurvey";
 import PersonalKcalInfo from "./PersonalKcalInfo/PersonalKcalInfo";
-import styles from "../../../css/PersonalKcalNeed.module.css";
+import styles from "../../../css/Optimiser/PersonalKcalNeed.module.css";
 
 class PersonalKcalNeed extends Component {
   state = {
@@ -28,7 +28,7 @@ class PersonalKcalNeed extends Component {
       }
       return <PersonalKcalInfo kcal={kcalNeed.toFixed(2)} />;
     } else {
-      return <p>Let's count your calorie needs!</p>;
+      return <p className={styles.PersonalKcalNeed__text}>Let's count your calorie needs!</p>;
     }
   };
   render() {

@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '../../../../css/TableRow.module.css'
+import styles from '../../../../css/Optimiser/TableRow.module.css'
 
 const TableRow = (props) => {
   return (

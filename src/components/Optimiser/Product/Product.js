@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import styles from "../../../css/Product.module.css";
+import styles from "../../../css/Optimiser/Product.module.css";
 import ProductImg from "./ProductImg/ProductImg";
 
 class Product extends Component {
