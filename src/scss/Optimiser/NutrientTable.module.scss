@@ -1,9 +1,9 @@
-@use './Global.module.scss';
+@use '../Global.module.scss';
 
 .ntable {
   &__container {
     width: fit-content;
-    color: white;
+    color: Global.$textColor;
     border-collapse: collapse;
     margin: 16px;
     @include Global.pop-out-animation();

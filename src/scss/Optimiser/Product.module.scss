@@ -1,11 +1,11 @@
-@use './Global.module.scss';
+@use '../Global.module.scss';
 .product{
   height: auto;
   margin: 8px;
   background-size: 200%;
   border-radius: 8px;
-  background-image: linear-gradient(to right, Global.$lightColorBg 50%, rgb(252, 46, 46) 50%);
-  color: white;
+  background-image: linear-gradient(to right, Global.$lightColor 50%, rgb(252, 46, 46) 50%);
+  color: Global.$textColor;
   @include Global.pop-out-animation();
   &__wrapper{
     display: flex;
@@ -45,7 +45,7 @@
     background-color: rgb(252, 46, 46);
     &:after{
       content: 'X';
-      color: white;
+      color: Global.$textColor;
     }
   }
 }

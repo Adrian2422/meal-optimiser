@@ -7,7 +7,7 @@
   border: none;
   resize: none;
   outline: none;
-  color: white;
+  color: #ffffff;
 }
 .productPick__textarea::-webkit-scrollbar {
   width: 8px;
@@ -42,7 +42,7 @@
   border-radius: 8px;
   cursor: pointer;
   background-color: #1c5488;
-  color: white;
+  color: #ffffff;
   transition: all 0.1s linear;
 }
 .button--ok:hover,

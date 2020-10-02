@@ -1,9 +1,9 @@
-@use 'Global.module.scss';
+@use '../Global.module.scss';
 .PersonalSurvey{
   padding: 16px;
   display: flex;
   flex-flow: column nowrap;
-  color: white;
+  color: Global.$textColor;
   @include Global.pop-out-animation();
   &__leftCol,
   &__rightCol{
@@ -20,8 +20,8 @@
   border: none;
   border-radius: 8px;
   outline: none;
-  background-color: Global.$darkColorBg;
-  color: white;
+  background-color: Global.$darkColor;
+  color: Global.$textColor;
     &::-webkit-inner-spin-button,
     &::-webkit-outer-spin-button{
       -webkit-appearance: none;
@@ -41,8 +41,8 @@
     margin: 16px auto;
     padding: 0 16px;
     border-radius: 8px;
-    background-color: Global.$darkColorBg;
-    color: white;
+    background-color: Global.$darkColor;
+    color: Global.$textColor;
     transition: all 0.1s linear;
     &:hover,
     &:active {

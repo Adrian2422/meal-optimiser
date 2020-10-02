@@ -1,13 +1,13 @@
-@use './Global.module.scss';
+@use '../Global.module.scss';
 .PersonalKcalNeed{
   margin: 16px;
-  color: white;
+  color: Global.$textColor;
   
 }
 
 @media (max-width: 500px) {
   .PersonalKcalNeed{
-    border-top: 2px solid Global.$darkColorBg;
+    border-top: 2px solid Global.$darkColor;
     &__text{
       font-size: 8vw;
     }

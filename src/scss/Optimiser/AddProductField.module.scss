@@ -1,15 +1,15 @@
-@use './Global.module.scss';
+@use '../Global.module.scss';
 .productPick {
   &__textarea {
     @include Global.globalFont();
-    background-color: Global.$darkColorBg;
+    background-color: Global.$darkColor;
     max-width: 70%;
     padding: 8px;
     border-radius: 8px;
     border: none;
     resize: none;
     outline: none;
-    color: white;
+    color: Global.$textColor;
     &::-webkit-scrollbar {
       width: 8px;
     }
@@ -20,7 +20,7 @@
     &::-webkit-scrollbar-thumb {
       border-radius: 5px;
       border: 1px solid black;
-      background-color: Global.$lightColorBg;
+      background-color: Global.$lightColor;
     }
   }
 }
@@ -40,8 +40,8 @@
   padding: 0 16px;
   border-radius: 8px;
   cursor: pointer;
-  background-color: Global.$darkColorBg;
-  color: white;
+  background-color: Global.$darkColor;
+  color: Global.$textColor;
   transition: all 0.1s linear;
   &:hover {
     transform: scale(1.1);

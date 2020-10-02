@@ -1,1 +1,1 @@
-{"version":3,"sourceRoot":"","sources":["../../scss/optimiser/PersonalKcalNeed.module.scss"],"names":[],"mappings":"AACA;EACE;EACA;;;AAIF;EACE;IACE;;EACA;IACE","file":"PersonalKcalNeed.module.css"}
+{"version":3,"sourceRoot":"","sources":["../../scss/optimiser/PersonalKcalNeed.module.scss","../../scss/Global.module.scss"],"names":[],"mappings":"AACA;EACE;EACA,OCDU;;;ADKZ;EACE;IACE;;EACA;IACE","file":"PersonalKcalNeed.module.css"}

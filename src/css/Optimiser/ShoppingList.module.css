@@ -20,7 +20,7 @@
   background-color: #1c5488;
 }
 .ShoppingList__printWrapper {
-  background-color: white;
+  background-color: #ffffff;
   padding: 0.4cm 0.6cm;
   border: 1px solid black;
 }
@@ -39,7 +39,7 @@
   padding: 0 16px;
   border-radius: 8px;
   background-color: #1c5488;
-  color: white;
+  color: #ffffff;
   transition: all 0.1s linear;
 }
 .ShoppingList__printButton:hover, .ShoppingList__printButton:active {

@@ -1,4 +1,4 @@
-@use './Global.module.scss';
+@use '../Global.module.scss';
 
 .modal--hidden {
   display: none;
@@ -17,8 +17,8 @@
   box-sizing: border-box;
   border-radius: 16px;
   z-index: 100;
-  background-color: Global.$lightColorBg;
-  color: white;
+  background-color: Global.$lightColor;
+  color: Global.$textColor;
   animation: slide-up 0.5s ease-in-out;
   @keyframes slide-up {
     0% {

@@ -1,55 +1,17 @@
-.start {
-  display: flex;
-  font-family: "Baloo Tamma 2", cursive;
-  height: 100vh;
-  width: 100%;
-  flex-direction: column;
-  color: white;
-}
+/* Error: There is no module with the namespace "Global".
+ *    ,
+ * 12 |   color: Global.$textColor;
+ *    |          ^^^^^^^^^^^^^^^^^
+ *    '
+ *   scss\optimiser\start.module.scss 12:10  root stylesheet */
 
-.start__title {
-  padding: 16px;
-  background-color: #2A2B5F;
-  cursor: default;
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: 'Error: There is no module with the namespace "Global".\a    \2577 \a 12 \2502    color: Global.$textColor;\d\a    \2502           ^^^^^^^^^^^^^^^^^\a    \2575 \a   scss\\optimiser\\start.module.scss 12:10  root stylesheet';
 }
-.start__title h1 {
-  margin: 0;
-  font-size: 3em;
-}
-
-.columns {
-  height: 100%;
-  width: 100%;
-  display: flex;
-  flex-flow: row nowrap;
-}
-
-.columns__left,
-.columns__right {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  width: 50%;
-  height: 100%;
-  background-color: #414394;
-  transition: all 0.2s ease-in-out;
-}
-.columns__left p,
-.columns__right p {
-  margin: 0;
-  font-size: 3em;
-}
-.columns__left:hover,
-.columns__right:hover {
-  background-color: #3a3b82;
-  font-size: 1.3em;
-}
-@media screen and (device-width: 360px) and (device-height: 640px) and (-webkit-device-pixel-ratio: 4) {
-  .columns__left,
-.columns__right {
-    font-size: 1.5em;
-  }
-}
-
-/*# sourceMappingURL=Start.module.css.map */

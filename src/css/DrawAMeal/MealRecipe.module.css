@@ -1,0 +1,82 @@
+.MealRecipe {
+  font-family: "Baloo Tamma 2", cursive;
+  display: flex;
+  flex-flow: column;
+  margin: 16px;
+  padding: 16px;
+  background-color: white;
+  overflow: auto;
+}
+.MealRecipe::-webkit-scrollbar {
+  width: 8px;
+}
+.MealRecipe::-webkit-scrollbar-track {
+  border-radius: 5px;
+  background-color: #ccd1d6;
+}
+.MealRecipe::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  border: 1px solid black;
+  background-color: #1c5488;
+}
+.MealRecipe__name {
+  margin: 0 auto;
+  transition: transform 0.1s linear;
+}
+.MealRecipe__name:hover, .MealRecipe__name:active {
+  transform: scale(1.1);
+}
+.MealRecipe__tags {
+  margin: 0;
+}
+.MealRecipe__mealLink {
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+}
+.MealRecipe__wrapper {
+  margin: 32px 0;
+  display: flex;
+  width: fit-content;
+}
+.MealRecipe__container {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-around;
+  margin: 0 64px;
+}
+.MealRecipe__ingredients {
+  text-align: left;
+  margin: 16px auto;
+}
+.MealRecipe__image {
+  margin: auto;
+  max-width: 50%;
+  height: auto;
+}
+
+.Instructions {
+  display: flex;
+  flex-flow: column nowrap;
+  width: 50%;
+  width: fit-content;
+  margin: 0 64px;
+}
+.Instructions__ytLink {
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 8px;
+  width: fit-content;
+  background-color: #FF0000;
+  color: white;
+  text-decoration: none;
+  transition: transform 0.1s linear;
+}
+.Instructions__ytLink:hover, .Instructions__ytLink:active {
+  transform: scale(1.1);
+}
+.Instructions__text {
+  text-align: justify;
+}
+
+/*# sourceMappingURL=mealrecipe.module.css.map */

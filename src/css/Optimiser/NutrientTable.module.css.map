@@ -1,1 +1,1 @@
-{"version":3,"sourceRoot":"","sources":["../../scss/optimiser/NutrientTable.module.scss","../../scss/optimiser/Global.module.scss"],"names":[],"mappings":"AAGE;EACE;EACA;EACA;EACA;ECIF;;AACE;EACE;IACE;;EAEF;IACE;;;ADPN;EACE;EACA;;AAEF;EACE;EACA","file":"NutrientTable.module.css"}
+{"version":3,"sourceRoot":"","sources":["../../scss/optimiser/NutrientTable.module.scss","../../scss/Global.module.scss"],"names":[],"mappings":"AAGE;EACE;EACA,OCHQ;EDIR;EACA;ECKF;;AACE;EACE;IACE;;EAEF;IACE;;;ADRN;EACE;EACA;;AAEF;EACE;EACA","file":"NutrientTable.module.css"}

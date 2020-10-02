@@ -1,4 +1,4 @@
-@use './Global.module.scss';
+@use '../Global.module.scss';
 
 .ShoppingList{
   width: fit-content;
@@ -18,10 +18,10 @@
   }
   &::-webkit-scrollbar-thumb {
     border-radius: 5px;
-    background-color: Global.$darkColorBg;
+    background-color: Global.$darkColor;
   }
   &__printWrapper{
-    background-color: white;
+    background-color: Global.$textColor;
     padding: .4cm .6cm;
     border: 1px solid black;
   }
@@ -37,8 +37,8 @@
     margin: auto;
     padding: 0 16px;
     border-radius: 8px;
-    background-color: Global.$darkColorBg;
-    color: white;
+    background-color: Global.$darkColor;
+    color: Global.$textColor;
     transition: all 0.1s linear;
     &:hover,
     &:active {

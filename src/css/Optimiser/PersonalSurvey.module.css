@@ -2,7 +2,7 @@
   padding: 16px;
   display: flex;
   flex-flow: column nowrap;
-  color: white;
+  color: #ffffff;
   animation: pop-out 0.1s ease-in-out;
 }
 @keyframes pop-out {
@@ -27,7 +27,7 @@
   border-radius: 8px;
   outline: none;
   background-color: #1c5488;
-  color: white;
+  color: #ffffff;
 }
 .PersonalSurvey__input::-webkit-inner-spin-button, .PersonalSurvey__input::-webkit-outer-spin-button, .PersonalSurvey__select::-webkit-inner-spin-button, .PersonalSurvey__select::-webkit-outer-spin-button {
   -webkit-appearance: none;
@@ -49,7 +49,7 @@
   padding: 0 16px;
   border-radius: 8px;
   background-color: #1c5488;
-  color: white;
+  color: #ffffff;
   transition: all 0.1s linear;
 }
 .PersonalSurvey__button:hover, .PersonalSurvey__button:active {

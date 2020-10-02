@@ -1,5 +1,5 @@
-$darkColorBg: #2A2B5F;
-$lightColorBg: lighten($darkColorBg, 15%);
+$darkColor: #2A2B5F;
+$lightColor: lighten($darkColor, 15%);
 @mixin globalFont {
   font-family: 'Baloo Tamma 2', cursive;
 }
@@ -9,11 +9,11 @@ $lightColorBg: lighten($darkColorBg, 15%);
   height: 100vh;
   width: 100%;
   flex-direction: column;
-  color: white;
+  color: Global.$textColor;
 }
 .start__title{
   padding: 16px;
-  background-color: $darkColorBg;
+  background-color: $darkColor;
   cursor: default;
   & h1{
     margin: 0;
@@ -34,14 +34,14 @@ $lightColorBg: lighten($darkColorBg, 15%);
   cursor: pointer;
   width: 50%;
   height: 100%;
-  background-color: $lightColorBg;
+  background-color: $lightColor;
   transition: all .2s ease-in-out;
   & p{
     margin: 0;
     font-size: 3em;
   }
   &:hover{
-    background-color: lighten($darkColorBg, 10%);
+    background-color: lighten($darkColor, 10%);
     font-size: 1.3em;
   }
   @media screen 

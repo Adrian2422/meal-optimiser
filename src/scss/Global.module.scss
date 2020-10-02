@@ -1,5 +1,6 @@
-$darkColorBg: #1c5488;
-$lightColorBg: lighten($darkColorBg, 15%);
+$darkColor: #1c5488;
+$lightColor: lighten($darkColor, 15%);
+$textColor: #ffffff;
 @mixin buttonStyle {
   border: none;
   cursor: pointer;

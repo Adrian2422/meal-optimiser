@@ -1,4 +1,4 @@
-@use './Global.module.scss';
+@use '../Global.module.scss';
 
 .optimiser{
   @include Global.globalFont();
@@ -6,7 +6,7 @@
   flex-direction: column;
   height: 100vh;
   width: 100%;
-  background-color: Global.$lightColorBg
+  background-color: Global.$lightColor
 }
 .wrapper{
   display: flex;
@@ -22,8 +22,8 @@
   min-width: 200px;
   box-sizing: border-box;
   border-radius: 0 5px 5px 0;
-  border-top: 2px solid Global.$lightColorBg;
-  background-color: Global.$darkColorBg;
+  border-top: 2px solid Global.$lightColor;
+  background-color: Global.$darkColor;
   &::-webkit-scrollbar {
     width: 8px;
   }
@@ -34,7 +34,7 @@
   &::-webkit-scrollbar-thumb {
     border-radius: 5px;
     border: 1px solid black;
-    background-color: Global.$darkColorBg;
+    background-color: Global.$darkColor;
   }
 }
 .content{
@@ -43,7 +43,7 @@
   justify-content: space-around;
   width: 60%;
   overflow: auto;
-  background-color: Global.$lightColorBg;
+  background-color: Global.$lightColor;
   &::-webkit-scrollbar {
     width: 8px;
   }
@@ -54,13 +54,13 @@
   &::-webkit-scrollbar-thumb {
     border-radius: 5px;
     border: 1px solid black;
-    background-color: Global.$darkColorBg;
+    background-color: Global.$darkColor;
   }
 }
 
 .nutrientTablePlaceholder{
   width: 100%;
-  color: white;
+  color: Global.$textColor;
   font-size: 1.5rem;
 }
 

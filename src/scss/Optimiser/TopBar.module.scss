@@ -1,21 +1,21 @@
-@use './Global.module.scss';
+@use '../Global.module.scss';
 
 .TopBar {
   display: flex;
   align-items: center;
   height: 75px;
   width: 100%;
-  background-color: Global.$darkColorBg;
-  color: white;
+  background-color: Global.$darkColor;
+  color: Global.$textColor;
   &__backBtn {
     @include Global.buttonStyle;
     height: 50px;
     width: 50px;
     border-radius: 8px;
     margin: 0 8px;
-    background-color: Global.$lightColorBg;
+    background-color: Global.$lightColor;
     transition: all 0.1s linear;
-    color: white;
+    color: Global.$textColor;
     &:hover,
     &:active {
       transform: scale(1.1);
@@ -29,8 +29,8 @@
     margin: 0 8px;
     padding: 0 16px;
     border-radius: 8px;
-    background-color: Global.$lightColorBg;
-    color: white;
+    background-color: Global.$lightColor;
+    color: Global.$textColor;
     transition: all 0.1s linear;
     &:hover,
     &:active {
